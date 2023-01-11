@@ -7,6 +7,7 @@ import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.util.Mth;
 
 public class NautilusModel<T extends Nautilus> extends EntityModel<T> {
 
@@ -34,7 +35,16 @@ public class NautilusModel<T extends Nautilus> extends EntityModel<T> {
 
     @Override
     public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-
+        this.bone2.yRot = -0.5F;
+        this.bone2.y = 20.5F;
+        this.bone2.x = -3.0F;
+        if (entity.isMovingInWater()) {
+            this.bone.xRot = Mth.cos(ageInTicks * 0.15F) / 6.0F;
+            this.bone2.xRot = Mth.cos(ageInTicks * 0.15F) / 7.0F;
+        } else {
+            this.bone.y = Mth.cos(ageInTicks * 0.15F) + 18.5F;
+            this.bone2.xRot = -Mth.cos(ageInTicks * 0.15F) / 11.0F + 0.2F;
+        }
     }
 
     @Override

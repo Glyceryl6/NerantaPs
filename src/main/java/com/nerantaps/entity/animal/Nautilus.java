@@ -1,21 +1,18 @@
 package com.nerantaps.entity.animal;
 
 import net.minecraft.network.protocol.Packet;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.animal.WaterAnimal;
+import net.minecraft.world.entity.projectile.ThrownPotion;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelReader;
 import net.minecraftforge.common.ForgeMod;
-import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.network.NetworkHooks;
 
-@SuppressWarnings("deprecation")
-public class Nautilus extends PathfinderMob {
+public class Nautilus extends WaterAnimal {
 
     public Nautilus(EntityType<? extends Nautilus> type, Level level) {
         super(type, level);
@@ -33,7 +30,6 @@ public class Nautilus extends PathfinderMob {
                 .add(Attributes.MOVEMENT_SPEED, 0.4F)
                 .add(Attributes.MAX_HEALTH, 10.0F)
                 .add(Attributes.ARMOR, 4.0F)
-                .add(Attributes.FOLLOW_RANGE, 16.0F)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 1.0F)
                 .add(ForgeMod.SWIM_SPEED.get(), 0.4F);
     }
@@ -43,33 +39,14 @@ public class Nautilus extends PathfinderMob {
     }
 
     @Override
-    public boolean canDrownInFluidType(FluidType type) {
-        return true;
-    }
-
-    @Override
-    public boolean checkSpawnObstruction(LevelReader world) {
-        return world.isUnobstructed(this);
-    }
-
-    @Override
-    public boolean isPushedByFluid() {
-        return false;
-    }
-
-    @Override
-    public SoundEvent getHurtSound(DamageSource damage) {
-        return SoundEvents.GENERIC_HURT;
-    }
-
-    @Override
-    public SoundEvent getDeathSound() {
-        return SoundEvents.GENERIC_DEATH;
-    }
-
-    @Override
-    public MobType getMobType() {
-        return MobType.WATER;
+    public boolean hurt(DamageSource source, float amount) {
+        Entity entity = source.getDirectEntity();
+        boolean flag1 = entity instanceof ThrownPotion;
+        boolean flag2 = entity instanceof AreaEffectCloud;
+        if (flag1 || flag2 || source == DamageSource.DROWN) {
+            return false;
+        }
+        return super.hurt(source, amount);
     }
 
     @Override
