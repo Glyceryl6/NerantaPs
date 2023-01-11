@@ -11,9 +11,13 @@ import net.minecraft.client.model.geom.builders.*;
 public class TubeWormModel<T extends TubeWorm> extends EntityModel<T> {
 
     private final ModelPart group;
+    private final ModelPart group2;
+    private final ModelPart group3;
 
     public TubeWormModel(ModelPart root) {
         this.group = root.getChild("group");
+        this.group2 = root.getChild("group2");
+        this.group3 = root.getChild("group3");
     }
 
     public static LayerDefinition createBodyLayer() {
@@ -38,6 +42,8 @@ public class TubeWormModel<T extends TubeWorm> extends EntityModel<T> {
     @Override
     public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
         this.group.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+        this.group2.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+        this.group3.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
     }
 
 }

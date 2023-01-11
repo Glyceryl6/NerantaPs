@@ -36,26 +36,18 @@ public class DicynodonModel<T extends Dicynodon> extends EntityModel<T> {
                 .addBox(-5.0F, -8.0F, -7.0F, 10.0F, 14.0F, 8.0F, new CubeDeformation(0.0F)),
                 PartPose.offsetAndRotation(0.0F, 11.0F, 2.0F, 1.5708F, 0.0F, 0.0F));
         partDefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 0).mirror()
-                .addBox(-4.0F, -3.0F, -6.0F, 8.0F, 7.0F, 6.0F,
-                        new CubeDeformation(0.0F)).mirror(false).texOffs(46, 22)
-                .addBox(-3.0F, -1.0F, -9.0F, 6.0F, 4.0F, 3.0F,
-                        new CubeDeformation(0.0F)).texOffs(28, 3)
-                .addBox(3.0F, 1.5F, -7.0F, 1.0F, 3.0F, 1.0F,
-                        new CubeDeformation(0.0F)).texOffs(28, 3)
-                .addBox(-4.0F, 1.5F, -7.0F, 1.0F, 3.0F, 1.0F,
-                        new CubeDeformation(0.0F)), PartPose.offset(0.0F, 12.0F, -6.0F));
+                .addBox(-4.0F, -3.0F, -6.0F, 8.0F, 7.0F, 6.0F, new CubeDeformation(0.0F)).mirror(false).texOffs(46, 22)
+                .addBox(-3.0F, -1.0F, -9.0F, 6.0F, 4.0F, 3.0F, new CubeDeformation(0.0F)).texOffs(28, 3)
+                .addBox(3.0F, 1.5F, -7.0F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)).texOffs(28, 3)
+                .addBox(-4.0F, 1.5F, -7.0F, 1.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 12.0F, -6.0F));
         partDefinition.addOrReplaceChild("leg0", CubeListBuilder.create().texOffs(0, 43).mirror()
-                .addBox(-2.0F, 0.0F, -2.0F, 4.0F, 6.0F, 4.0F, new CubeDeformation(0.0F))
-                .mirror(false), PartPose.offset(-3.0F, 18.0F, 7.0F));
+                .addBox(-2.0F, 0.0F, -2.0F, 4.0F, 6.0F, 4.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(-3.0F, 18.0F, 7.0F));
         partDefinition.addOrReplaceChild("leg1", CubeListBuilder.create().texOffs(0, 33).mirror()
-                .addBox(-2.0F, 0.0F, -2.0F, 4.0F, 6.0F, 4.0F, new CubeDeformation(0.0F))
-                .mirror(false), PartPose.offset(3.0F, 18.0F, 7.0F));
+                .addBox(-2.0F, 0.0F, -2.0F, 4.0F, 6.0F, 4.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(3.0F, 18.0F, 7.0F));
         partDefinition.addOrReplaceChild("leg2", CubeListBuilder.create().texOffs(0, 23).mirror()
-                .addBox(-2.0F, 0.0F, -2.0F, 4.0F, 6.0F, 4.0F, new CubeDeformation(0.0F))
-                .mirror(false), PartPose.offset(-3.0F, 18.0F, -5.0F));
+                .addBox(-2.0F, 0.0F, -2.0F, 4.0F, 6.0F, 4.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(-3.0F, 18.0F, -5.0F));
         partDefinition.addOrReplaceChild("leg3", CubeListBuilder.create().texOffs(0, 13).mirror()
-                .addBox(-2.0F, 0.0F, -2.0F, 4.0F, 6.0F, 4.0F, new CubeDeformation(0.0F))
-                .mirror(false), PartPose.offset(3.0F, 18.0F, -5.0F));
+                .addBox(-2.0F, 0.0F, -2.0F, 4.0F, 6.0F, 4.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(3.0F, 18.0F, -5.0F));
         PartDefinition tail = partDefinition.addOrReplaceChild("tail", CubeListBuilder.create(), PartPose.offset(0.0F, 12.0F, 8.0F));
         tail.addOrReplaceChild("tail_r1", CubeListBuilder.create().texOffs(48, 8)
                         .addBox(-1.0F, -1.0F, 4.0F, 2.0F, 2.0F, 6.0F, new CubeDeformation(0.0F)),

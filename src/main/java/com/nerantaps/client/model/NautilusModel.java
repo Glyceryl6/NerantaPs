@@ -23,8 +23,7 @@ public class NautilusModel<T extends Nautilus> extends EntityModel<T> {
         MeshDefinition meshDefinition = new MeshDefinition();
         PartDefinition partDefinition = meshDefinition.getRoot();
         partDefinition.addOrReplaceChild("bone", CubeListBuilder.create().texOffs(0, 0)
-                .addBox(-3.0F, -7.44F, -3.0F, 6.0F, 12.0F, 12.0F,
-                        new CubeDeformation(0.0F)).texOffs(35, 0)
+                .addBox(-3.0F, -7.44F, -3.0F, 6.0F, 12.0F, 12.0F, new CubeDeformation(0.0F)).texOffs(35, 0)
                 .addBox(-3.5F, -1.44F, -6.0F, 7.0F, 1.0F, 7.0F, new CubeDeformation(0.0F)),
                 PartPose.offset(-3.0F, 19.44F, -1.0F));
         partDefinition.addOrReplaceChild("bone2", CubeListBuilder.create().texOffs(40, 8).mirror()
