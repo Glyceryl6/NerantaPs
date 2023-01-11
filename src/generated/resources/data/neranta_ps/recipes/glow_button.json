@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "neranta_ps:glow_planks"
+    }
+  ],
+  "result": {
+    "item": "neranta_ps:glow_button"
+  }
+}

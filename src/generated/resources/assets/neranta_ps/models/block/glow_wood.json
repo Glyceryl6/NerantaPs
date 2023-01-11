@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "neranta_ps:block/glow_log",
+    "side": "neranta_ps:block/glow_log"
+  }
+}

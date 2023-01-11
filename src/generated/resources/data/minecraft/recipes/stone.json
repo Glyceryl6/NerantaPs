@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.2,
+  "ingredient": {
+    "item": "neranta_ps:abysmal_sea_rock"
+  },
+  "result": "minecraft:stone"
+}

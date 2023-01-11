@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_inventory",
+  "textures": {
+    "texture": "neranta_ps:block/cycas_planks"
+  }
+}

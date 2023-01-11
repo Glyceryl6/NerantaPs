@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left",
+  "textures": {
+    "bottom": "neranta_ps:block/glow_door_bottom",
+    "top": "neranta_ps:block/glow_door_top"
+  }
+}

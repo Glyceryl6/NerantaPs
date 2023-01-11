@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "neranta_ps:block/glow_planks",
+    "side": "neranta_ps:block/glow_planks",
+    "top": "neranta_ps:block/glow_planks"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.2,
+  "ingredient": {
+    "item": "neranta_ps:dicynodon_meat"
+  },
+  "result": "neranta_ps:cooked_dicynodon_meat"
+}

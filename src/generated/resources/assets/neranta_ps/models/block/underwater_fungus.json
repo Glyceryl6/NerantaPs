@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "neranta_ps:block/underwater_fungus"
+  }
+}

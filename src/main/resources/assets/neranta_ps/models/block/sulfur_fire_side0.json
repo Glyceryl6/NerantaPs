@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_fire_side",
+  "textures": {
+    "fire": "neranta_ps:block/sulfur_fire_0"
+  }
+}

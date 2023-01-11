@@ -1,0 +1,20 @@
+{
+  "paloloworm": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "neranta_ps:paloloworm",
+        "stream": false
+      }
+    ]
+  },
+  "palolowoem_attack": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "neranta_ps:paloloworm_attack",
+        "stream": false
+      }
+    ]
+  }
+}

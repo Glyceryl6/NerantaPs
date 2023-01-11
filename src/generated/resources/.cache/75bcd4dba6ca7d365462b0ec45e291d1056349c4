@@ -1,0 +1,27 @@
+// 1.19.2	2023-01-09T17:36:08.2469776	Tags for minecraft:block
+36bc238c3bf1cdd406f38cda2a6dac2d57b20aff data/minecraft/tags/blocks/enderman_holdable.json
+900981066cc8a88dd5f5b4e185a22f9b871286d8 data/minecraft/tags/blocks/fence_gates.json
+1c1b4b09749d194b0cf18bdaede5b51665130ebb data/minecraft/tags/blocks/fire.json
+8259cf2e04706486cd52939144468643bcefc5d8 data/minecraft/tags/blocks/geode_invalid_blocks.json
+b49b880f8dd2979c862dd898d3f2135558f2860d data/minecraft/tags/blocks/ice.json
+9a8f859b336288ebe6b9dfe5e98edbae07083f0c data/minecraft/tags/blocks/leaves.json
+5a5566b26f083de9d610760451024044a2dae646 data/minecraft/tags/blocks/mineable/axe.json
+bbd25bbc0f4be76f07c6ffe1209b91acacef19af data/minecraft/tags/blocks/mineable/hoe.json
+25f4c610ad674f92333251a94024c79325a8cdc1 data/minecraft/tags/blocks/mineable/pickaxe.json
+84dcb120e2bd83054a588ec7803f565a7973f653 data/minecraft/tags/blocks/mineable/shovel.json
+522b599bc7a463e17e13e01b0dd4fd6cafe1a92c data/minecraft/tags/blocks/needs_iron_tool.json
+a08e7e779558f8015c4306192cb72902196d0c7f data/minecraft/tags/blocks/needs_stone_tool.json
+73cdce23b2808ef1570d1e0a07d76553b2bfb42c data/minecraft/tags/blocks/planks.json
+a28a114bb0d3f00c66456464f63ec83c78448204 data/minecraft/tags/blocks/replaceable_plants.json
+d6771d591378e0debacf9ff7df3fcee7c00f47c5 data/minecraft/tags/blocks/saplings.json
+7ef9cc2e02a599d8b94344943a78186c83e6d390 data/minecraft/tags/blocks/strider_warm_blocks.json
+121e44609bd8001795bf92a968dd785ad3e2f453 data/minecraft/tags/blocks/wooden_buttons.json
+91dcd3816cc3655a97d78a068bc6105b48090269 data/minecraft/tags/blocks/wooden_doors.json
+dcad9fb060eb42f1442bfb30fe19f2e215e2e375 data/minecraft/tags/blocks/wooden_fences.json
+78673ffd7b7f65714620b9655ded8d5b0f6e9e6a data/minecraft/tags/blocks/wooden_pressure_plates.json
+53b6d3098d7f4176b60f6663ba9c6d021000a5aa data/minecraft/tags/blocks/wooden_slabs.json
+6bda417c2974ab2beae646709c7df2128096f65a data/minecraft/tags/blocks/wooden_stairs.json
+b817d7644e1e59ee00892b9fe57641a401c3f0c0 data/minecraft/tags/blocks/wooden_trapdoors.json
+5d19559d496312d5a3a850f7e0168d90a3f70bdb data/neranta_ps/tags/blocks/cycas_logs.json
+3d37b0b62bdb3c27725b1ce804d8a9a570ddd1f1 data/neranta_ps/tags/blocks/glow_logs.json
+438b87e21d930d35125e751ab0d774293894bc10 data/neranta_ps/tags/blocks/sulfur_fire_base_blocks.json

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "neranta_ps:sulfur_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "neranta_ps:sulfur_powder"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "neranta_ps:block/glow_slab"
+    },
+    "type=double": {
+      "model": "neranta_ps:block/glow_planks"
+    },
+    "type=top": {
+      "model": "neranta_ps:block/glow_slab_top"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_top",
+  "textures": {
+    "side": "neranta_ps:block/magnetic_storm_vent",
+    "top": "neranta_ps:block/magnetic_storm_vent_top"
+  }
+}

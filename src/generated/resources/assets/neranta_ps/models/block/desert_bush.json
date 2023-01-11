@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "neranta_ps:block/desert_bush"
+  }
+}

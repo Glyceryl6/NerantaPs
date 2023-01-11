@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_top",
+  "textures": {
+    "side": "neranta_ps:block/abysmal_sea_rock",
+    "top": "neranta_ps:block/black_smoker"
+  }
+}

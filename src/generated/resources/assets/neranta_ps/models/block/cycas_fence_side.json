@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "textures": {
+    "texture": "neranta_ps:block/cycas_planks"
+  }
+}
