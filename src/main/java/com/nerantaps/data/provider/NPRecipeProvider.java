@@ -5,7 +5,6 @@ import com.nerantaps.registry.NPBlocks;
 import com.nerantaps.registry.NPItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.*;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 
@@ -47,10 +46,6 @@ public class NPRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_dicynodon_meat", has(NPItems.DICYNODON_MEAT.get())).save(finishedRecipeConsumer);
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(NPBlocks.ABYSMAL_SEA_ROCK.get()), Blocks.STONE.asItem(), 0.2F, 200)
                 .unlockedBy("has_abysmal_sea_rock", has(NPBlocks.ABYSMAL_SEA_ROCK.get())).save(finishedRecipeConsumer);
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(NPBlocks.RED_HOT_IRON_SAND.get()), Items.IRON_NUGGET, 0.2F, 200)
-                .unlockedBy("has_red_hot_iron_sand", has(NPBlocks.RED_HOT_IRON_SAND.get())).save(finishedRecipeConsumer);
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(NPBlocks.IRON_SAND.get()), Items.IRON_NUGGET, 0.2F, 200)
-                .unlockedBy("has_iron_sand", has(NPBlocks.IRON_SAND.get())).save(finishedRecipeConsumer);
         nineBlockStorageRecipes(finishedRecipeConsumer, NPItems.SULFUR_POWDER.get(), NPBlocks.SULFUR_BLOCK.get());
         pressurePlate(finishedRecipeConsumer, NPBlocks.CYCAS_PRESSURE_PLATE.get(), NPBlocks.CYCAS_PLANKS.get());
         pressurePlate(finishedRecipeConsumer, NPBlocks.GLOW_PRESSURE_PLATE.get(), NPBlocks.GLOW_PLANKS.get());

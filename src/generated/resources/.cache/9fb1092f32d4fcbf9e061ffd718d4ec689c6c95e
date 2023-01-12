@@ -1,9 +1,7 @@
-// 1.19.2	2023-01-09T17:07:18.8887914	Recipes
+// 1.19.2	2023-01-12T03:15:03.049506	Recipes
 d67d039b1eaea221d8bd8c260eaaeef4579985bd data/minecraft/advancements/recipes/building_blocks/stone.json
-adc9c1c0f3e406bf5c6bb9c5617abea4faf42200 data/minecraft/advancements/recipes/misc/iron_nugget.json
 2d7ce10686fc3719e2e5e27f0660593f16edcaf7 data/minecraft/advancements/recipes/neranta_tab_0/sulfur_block.json
 22314b0d04d21174ca9b24ad7e4b9e425cf9da57 data/minecraft/advancements/recipes/neranta_tab_1/sulfur_powder.json
-dec21d1265d5d1561163758892d45c4bcb60733d data/minecraft/recipes/iron_nugget.json
 9abde5b02dfc4c9465dd11d4a20582328a1eb7b6 data/minecraft/recipes/stone.json
 a00a8c9d24c5eef4244c6838d79eb1a6f3d356b0 data/minecraft/recipes/sulfur_block.json
 747d19567ec32d831750daa06893c74e82e64c07 data/minecraft/recipes/sulfur_powder.json
@@ -27,10 +25,13 @@ cbaeddb9aa55f104aaa981eb84e5bb8ba701bd8a data/neranta_ps/advancements/recipes/ne
 79c1d5f0ca067ee4931a839591838221318bb1d2 data/neranta_ps/advancements/recipes/neranta_tab_0/glow_stairs.json
 233e938dc9f04d59583cc3bb9614184142c79333 data/neranta_ps/advancements/recipes/neranta_tab_0/glow_trapdoor.json
 156d0dfaf65897718710f21c650ee3a77407a1f3 data/neranta_ps/advancements/recipes/neranta_tab_0/glow_wood.json
+e855f9d616b95c5362dc17baf11eed27e02dc56e data/neranta_ps/advancements/recipes/neranta_tab_0/iron_sandstone.json
+388b72b076de830704dde168d2a33f14675e073d data/neranta_ps/advancements/recipes/neranta_tab_1/cooked_dicynodon_meat.json
 f9ae0ce99de5a29330ff7a7bcc0c22e6bf4e3ba4 data/neranta_ps/advancements/recipes/neranta_tab_1/cycas_boots.json
 7b0839d7afeb1c173904f85e18a85e8518069b59 data/neranta_ps/advancements/recipes/neranta_tab_1/cycas_chestplate.json
 e96f65a0f57fc05f7fe2cfccf04b3a2a8d53f76e data/neranta_ps/advancements/recipes/neranta_tab_1/cycas_helmet.json
 ab8435e5040d5eab97351322353b7b59f864d1bf data/neranta_ps/advancements/recipes/neranta_tab_1/cycas_leggings.json
+b05564b94b998e8b40b26a59312a5de00545fb20 data/neranta_ps/recipes/cooked_dicynodon_meat.json
 c3a15e6f5c48e5ea2aa8df6db4f86a813a4ae7e7 data/neranta_ps/recipes/cycas_boots.json
 186a6debd61336fddd0ccf0a61fad32654c1e580 data/neranta_ps/recipes/cycas_button.json
 bb0bf03b69caa15b5911b022e491e82679bf1ea2 data/neranta_ps/recipes/cycas_chestplate.json
@@ -55,3 +56,4 @@ a63721ce24d4eb800d2f0c84b3d6f5281205333a data/neranta_ps/recipes/glow_pressure_p
 fdc7fcdaae7682370ae4312f78d35d5f94773b85 data/neranta_ps/recipes/glow_stairs.json
 e3d8bf7452fa41ad9652d12701d3b8cb8b0bd6f7 data/neranta_ps/recipes/glow_trapdoor.json
 c59efa069e9078389931f7290a2632731aa5f0c1 data/neranta_ps/recipes/glow_wood.json
+850fee73e1251a2dfdf3ad49857bcd91e2319dd7 data/neranta_ps/recipes/iron_sandstone.json

@@ -1,4 +1,4 @@
-// 1.19.2	2023-01-09T16:47:26.5953106	Item Models: neranta_ps
+// 1.19.2	2023-01-12T03:15:03.0831573	Item Models: neranta_ps
 7d1a1db5932218ba9187425e469e6a7480f6f203 assets/neranta_ps/models/item/cooked_dicynodon_meat.json
 a43ff58210e3eb30af485f66e9a51de04f834599 assets/neranta_ps/models/item/cycas_bark.json
 ccb92d7bb73ee7e109888f4b5fccd30ac9e5133e assets/neranta_ps/models/item/cycas_boots.json
@@ -21,7 +21,7 @@ fcef208f6baf71a1a9c865c266c9752573b7332b assets/neranta_ps/models/item/glow_moss
 6c660cac1bb9ffccff0e9bb317c2f0bc003987ee assets/neranta_ps/models/item/nascent_lava_bucket.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/neranta_ps/models/item/nautilus_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/neranta_ps/models/item/palolo_worm_spawn_egg.json
-3f0f28708d1c65ada56f93b901f842372fc27cf7 assets/neranta_ps/models/item/purple_sword.json
+3315fb6c17c3a7cc195d3649fb87b34dace91f2e assets/neranta_ps/models/item/purple_sword.json
 fb960d76403a2713a6a1bc86fd7813eecb659ae9 assets/neranta_ps/models/item/stripper.json
 fe94536568c766b5ec4e10b437a57d3733a40941 assets/neranta_ps/models/item/sulfur_powder.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/neranta_ps/models/item/tube_worm_spawn_egg.json

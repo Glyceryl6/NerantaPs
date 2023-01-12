@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 200,
+  "experience": 0.2,
+  "ingredient": {
+    "item": "neranta_ps:red_hot_iron_sand"
+  },
+  "result": "minecraft:iron_nugget"
+}
