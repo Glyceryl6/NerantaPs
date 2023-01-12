@@ -15,11 +15,11 @@ import static com.nerantaps.utils.NPItemUtils.spawnEgg;
 public class NPItems {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, NerantaPs.MOD_ID);
-    public static final RegistryObject<Item> PURPLE_SWORD = normal("purple_sword");
     public static final RegistryObject<Item> CYCAS_BARK = normal("cycas_bark");
     public static final RegistryObject<Item> SULFUR_POWDER = normal("sulfur_powder");
     public static final RegistryObject<Item> IRON_SNAIL_SHELL = normal("iron_snail_shell");
     public static final RegistryObject<Item> STRIPPER = ITEMS.register("stripper", Stripper::new);
+    public static final RegistryObject<Item> PURPLE_SWORD = ITEMS.register("purple_sword", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CYCAS_HELMET = ITEMS.register("cycas_helmet", () -> new CycasArmor(EquipmentSlot.HEAD));
     public static final RegistryObject<Item> CYCAS_CHESTPLATE = ITEMS.register("cycas_chestplate", () -> new CycasArmor(EquipmentSlot.CHEST));
     public static final RegistryObject<Item> CYCAS_LEGGINGS = ITEMS.register("cycas_leggings", () -> new CycasArmor(EquipmentSlot.LEGS));

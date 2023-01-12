@@ -21,7 +21,6 @@ public class NPItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        this.basicItem(NPItems.PURPLE_SWORD.get());
         this.basicItem(NPItems.STRIPPER.get());
         this.basicItem(NPItems.CYCAS_BARK.get());
         this.basicItem(NPItems.CYCAS_HELMET.get());
@@ -48,6 +47,7 @@ public class NPItemModelProvider extends ItemModelProvider {
         this.blockItem(NPBlocks.GLOW_MOSS.getId());
         this.blockItem(NPBlocks.GLOW_GRASS.getId());
         this.blockItem(NPBlocks.GLOW_SAPLING.getId());
+        this.handheldItem(NPItems.PURPLE_SWORD.get());
     }
 
     private void spawnEggItem(Item item) {
@@ -55,9 +55,22 @@ public class NPItemModelProvider extends ItemModelProvider {
                 .parent(new ModelFile.UncheckedModelFile("item/template_spawn_egg"));
     }
 
+    @SuppressWarnings("unused")
+    private void customItem(Item item, String parent, String type) {
+        ResourceLocation resource = Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item));
+        this.withExistingParent(resource.getPath(), new ResourceLocation("item/" + parent))
+                .texture("layer0", NerantaPs.prefix(type + "/" + resource.getPath()));
+    }
+
     private void blockItem(ResourceLocation resource) {
         this.withExistingParent(resource.getPath(), new ResourceLocation("item/generated"))
                 .texture("layer0", NerantaPs.prefix("block/" + resource.getPath()));
+    }
+
+    private void handheldItem(Item item) {
+        ResourceLocation resource = Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item));
+        this.withExistingParent(resource.getPath(), new ResourceLocation("item/handheld"))
+                .texture("layer0", NerantaPs.prefix("item/" + resource.getPath()));
     }
 
 }
