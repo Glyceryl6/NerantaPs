@@ -18,6 +18,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.function.Supplier;
+
 import static com.nerantaps.utils.NPBlockUtils.*;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -32,11 +34,11 @@ public class NPBlocks {
     public static final RegistryObject<Block> MAGNETIC_STORM_VENT = register("magnetic_storm_vent", MagneticStormVent::new);
     public static final RegistryObject<Block> RED_HOT_IRON_SAND = register("red_hot_iron_sand", RedHotIronSand::new);
     public static final RegistryObject<Block> DESERT_BUSH = register("desert_bush", () -> new FallingBlock(copy(Blocks.DEAD_BUSH)));
-    public static final RegistryObject<Block> STRIPPED_GLOW_LOG = register("stripped_glow_log", () -> glowLog(MaterialColor.WOOD));
-    public static final RegistryObject<Block> STRIPPED_GLOW_WOOD = wood("stripped_glow_wood", MaterialColor.WOOD);
-    public static final RegistryObject<Block> GLOW_LOG = register("glow_log", () -> glowLog(MaterialColor.PODZOL));
+    public static final RegistryObject<Block> STRIPPED_GLOW_LOG = register("stripped_glow_log", () -> Blocks.log(MaterialColor.WOOD, MaterialColor.PODZOL));
+    public static final RegistryObject<Block> STRIPPED_GLOW_WOOD = wood("stripped_glow_wood", MaterialColor.WOOD, 15);
     public static final RegistryObject<Block> GLOW_LEAVES = register("glow_leaves", () -> new LeavesBlock(copy(Blocks.OAK_LEAVES).lightLevel(s -> 11)));
-    public static final RegistryObject<Block> GLOW_WOOD = wood("glow_wood", MaterialColor.WOOD);
+    public static final RegistryObject<Block> GLOW_LOG = register("glow_log", () -> glowLog(STRIPPED_GLOW_LOG, MaterialColor.PODZOL));
+    public static final RegistryObject<Block> GLOW_WOOD = register("glow_wood", () -> glowLog(STRIPPED_GLOW_WOOD, MaterialColor.WOOD));
     public static final RegistryObject<Block> GLOW_PLANKS = normal("glow_planks", copy(Blocks.OAK_PLANKS).lightLevel(s -> 1));
     public static final RegistryObject<Block> GLOW_SLAB = slab("glow_slab", copy(Blocks.OAK_SLAB).lightLevel(s -> 1));
     public static final RegistryObject<Block> GLOW_DOOR = door("glow_door", copy(Blocks.OAK_DOOR).lightLevel(s -> 1));
@@ -56,11 +58,11 @@ public class NPBlocks {
     public static final RegistryObject<Block> ENRICHED_IRON_ORE = ore("enriched_iron_ore", defaultProperties().strength(2.5F, 6.0F));
     public static final RegistryObject<Block> SULFUR_ORE = ore("sulfur_ore", defaultProperties().strength(2.0F, 6.0F));
     public static final RegistryObject<Block> SULFUR_BLOCK = normal("sulfur_block", defaultProperties().strength(1.5F, 5.0F));
-    public static final RegistryObject<Block> STRIPPED_CYCAS_LOG = register("stripped_cycas_log", () -> glowLog(MaterialColor.PODZOL));
-    public static final RegistryObject<Block> STRIPPED_CYCAS_WOOD = wood("stripped_cycas_wood", MaterialColor.WOOD);
-    public static final RegistryObject<Block> CYCAS_LEAVES = register("cycas_leaves", () -> new LeavesBlock(copy(Blocks.OAK_LEAVES)));
-    public static final RegistryObject<Block> CYCAS_LOG = register("cycas_log", CycasLog::new);
-    public static final RegistryObject<Block> CYCAS_WOOD = wood("cycas_wood", MaterialColor.WOOD);
+    public static final RegistryObject<Block> STRIPPED_CYCAS_LOG = register("stripped_cycas_log", () -> Blocks.log(MaterialColor.WOOD, MaterialColor.PODZOL));
+    public static final RegistryObject<Block> STRIPPED_CYCAS_WOOD = wood("stripped_cycas_wood", MaterialColor.WOOD, 0);
+    public static final RegistryObject<Block> CYCAS_LEAVES = register("cycas_leaves", () -> Blocks.leaves(SoundType.GRASS));
+    public static final RegistryObject<Block> CYCAS_LOG = register("cycas_log", () -> new CycasLog(STRIPPED_CYCAS_LOG));
+    public static final RegistryObject<Block> CYCAS_WOOD = register("cycas_wood", () -> new CycasLog(STRIPPED_CYCAS_WOOD));
     public static final RegistryObject<Block> CYCAS_PLANKS = normal("cycas_planks", cycasProperties());
     public static final RegistryObject<Block> CYCAS_SLAB = slab("cycas_slab", cycasProperties());
     public static final RegistryObject<Block> CYCAS_DOOR = door("cycas_door", cycasProperties());
@@ -78,8 +80,8 @@ public class NPBlocks {
     public static final RegistryObject<Block> ROTTEN_FLESH_BLOCK = register("rotten_flesh_block", RottenFleshBlock::new);
     public static final RegistryObject<Block> PALOLO_WORM_HOLE = register("palolo_worm_hole", PaloloWormHole::new);
 
-    private static RotatedPillarBlock glowLog(MaterialColor barkColor) {
-        return new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, (state) ->
+    private static RotatedPillarBlock glowLog(Supplier<Block> strippedBlock, MaterialColor barkColor) {
+        return new AxeStrippedBlock(strippedBlock, BlockBehaviour.Properties.of(Material.WOOD, (state) ->
                state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? MaterialColor.WOOD : barkColor)
                 .strength(2.0F).sound(SoundType.WOOD).lightLevel(s -> 15));
     }

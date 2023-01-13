@@ -68,7 +68,7 @@ public class SulfurFire extends BaseFireBlock {
     public void entityInside(BlockState blockState, Level level, BlockPos pos, Entity entity) {
         if (!entity.fireImmune()) {
             entity.setRemainingFireTicks(entity.getRemainingFireTicks() + 1);
-            if (entity instanceof LivingEntity livingEntity && level.getGameTime() % 60L == 0L) {
+            if (entity instanceof LivingEntity livingEntity) {
                 livingEntity.addEffect(new MobEffectInstance(MobEffects.POISON, 400));
             }
             if (entity.getRemainingFireTicks() == 0) {

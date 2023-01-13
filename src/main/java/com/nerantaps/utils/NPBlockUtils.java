@@ -31,9 +31,9 @@ public class NPBlockUtils {
         return register(name, () -> new DropExperienceBlock(properties));
     }
 
-    public static RegistryObject<Block> wood(String name, MaterialColor materialColor) {
+    public static RegistryObject<Block> wood(String name, MaterialColor materialColor, int lightLevel) {
         return register(name, () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, materialColor)
-                .strength(2.0F).sound(SoundType.WOOD).lightLevel(s -> 15)));
+                .strength(2.0F).sound(SoundType.WOOD).lightLevel(s -> lightLevel)));
     }
 
     public static RegistryObject<Block> flowerPot(String name, RegistryObject<Block> block) {

@@ -37,7 +37,11 @@ public class NPBlockStateProvider extends BlockStateProvider {
         this.axisBlock((RotatedPillarBlock) NPBlocks.GLOW_WOOD.get(),
                 NerantaPs.prefix("block/glow_log"), NerantaPs.prefix("block/glow_log"));
         this.axisBlock((RotatedPillarBlock) NPBlocks.CYCAS_WOOD.get(),
-                NerantaPs.prefix("block/cycas_log"), NerantaPs.prefix("block/glow_log"));
+                NerantaPs.prefix("block/cycas_log"), NerantaPs.prefix("block/cycas_log"));
+        this.axisBlock((RotatedPillarBlock) NPBlocks.STRIPPED_GLOW_WOOD.get(),
+                NerantaPs.prefix("block/stripped_glow_log"), NerantaPs.prefix("block/stripped_glow_log"));
+        this.axisBlock((RotatedPillarBlock) NPBlocks.STRIPPED_CYCAS_WOOD.get(),
+                NerantaPs.prefix("block/stripped_cycas_log"), NerantaPs.prefix("block/stripped_cycas_log"));
         this.simpleBlockItem(NPBlocks.IRON_SAND.get(), this.cubeAll(NPBlocks.IRON_SAND.get()));
         this.simpleBlockItem(NPBlocks.GLOW_WOOD.get(), this.models().cubeColumn("glow_wood",
                 NerantaPs.prefix("block/glow_log"), NerantaPs.prefix("block/glow_log")));
