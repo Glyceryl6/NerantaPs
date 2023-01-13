@@ -21,7 +21,6 @@ public class NerantaPs {
         NPBiomes.BIOMES.register(this.eventBus);
         NPFluids.FLUIDS.register(this.eventBus);
         NPFluids.FLUID_TYPES.register(this.eventBus);
-        NPSensors.SENSOR_TYPES.register(this.eventBus);
         NPEntities.ENTITY_TYPES.register(this.eventBus);
         MinecraftForge.EVENT_BUS.register(this);
     }
