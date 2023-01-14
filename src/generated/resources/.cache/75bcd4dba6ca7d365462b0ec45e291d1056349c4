@@ -1,10 +1,11 @@
-// 1.19.2	2023-01-09T17:36:08.2469776	Tags for minecraft:block
+// 1.19.2	2023-01-15T04:22:52.637415	Tags for minecraft:block
 36bc238c3bf1cdd406f38cda2a6dac2d57b20aff data/minecraft/tags/blocks/enderman_holdable.json
 900981066cc8a88dd5f5b4e185a22f9b871286d8 data/minecraft/tags/blocks/fence_gates.json
 1c1b4b09749d194b0cf18bdaede5b51665130ebb data/minecraft/tags/blocks/fire.json
 8259cf2e04706486cd52939144468643bcefc5d8 data/minecraft/tags/blocks/geode_invalid_blocks.json
 b49b880f8dd2979c862dd898d3f2135558f2860d data/minecraft/tags/blocks/ice.json
 9a8f859b336288ebe6b9dfe5e98edbae07083f0c data/minecraft/tags/blocks/leaves.json
+57325aff02539111e4496efd9f58b552d42dfc88 data/minecraft/tags/blocks/logs.json
 5a5566b26f083de9d610760451024044a2dae646 data/minecraft/tags/blocks/mineable/axe.json
 bbd25bbc0f4be76f07c6ffe1209b91acacef19af data/minecraft/tags/blocks/mineable/hoe.json
 25f4c610ad674f92333251a94024c79325a8cdc1 data/minecraft/tags/blocks/mineable/pickaxe.json
