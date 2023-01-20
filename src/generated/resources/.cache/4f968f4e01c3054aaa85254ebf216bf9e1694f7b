@@ -1,4 +1,4 @@
-// 1.19.2	2023-01-13T00:54:21.333312	Block States: neranta_ps
+// 1.19.2	2023-01-18T00:36:17.2511626	Block States: neranta_ps
 f1684896f86a31d63912dcdbaaeb7ff0dcf16194 assets/neranta_ps/blockstates/abysmal_sea_rock.json
 9d004bcf2833012d17684b71b740d1524095cb86 assets/neranta_ps/blockstates/black_smoker.json
 ac6ab7806572de34d29dd1fdbf02a31cde26abb2 assets/neranta_ps/blockstates/combustible_ice.json
@@ -86,7 +86,7 @@ ba7bd2908e21f367a828781c4ca99b7445be8b3e assets/neranta_ps/models/block/cycas_tr
 2b0dbc8537fe0093136928c5df5baef9eef76090 assets/neranta_ps/models/block/cycas_trapdoor_top.json
 45f3417c13ace0d60b604572fa45fc04e0b5b82e assets/neranta_ps/models/block/cycas_wood.json
 f685ff6bfcd39da3045f070aea371c21c8bcba46 assets/neranta_ps/models/block/cycas_wood_horizontal.json
-b33a1404f96a9d8464471a1008d0e331e139d518 assets/neranta_ps/models/block/desert_bush.json
+d1d2ea06c06091850964760ebc7f32a09035bf7e assets/neranta_ps/models/block/desert_bush.json
 956ef057015c81167adaf2d635b44dabf2539d53 assets/neranta_ps/models/block/elden_fern.json
 c6e932c4a85b964aca4ae361c63c6324a54fd9ca assets/neranta_ps/models/block/enriched_iron_ore.json
 ef6d61c57e66c1a209a35e626c813c8adc3e9c77 assets/neranta_ps/models/block/glossopteris.json
@@ -158,6 +158,7 @@ cafcaf72490df59f1addb8f6d81b7bba66ea96de assets/neranta_ps/models/item/cycas_pre
 0dd0a62ed7641485e7f04026dac9d1d0b2932fe2 assets/neranta_ps/models/item/cycas_stairs.json
 e8085d0be06c003753744e6ebd11ee5632910176 assets/neranta_ps/models/item/cycas_trapdoor.json
 156db57001632cea90b1a7d2e7ad4493abae317a assets/neranta_ps/models/item/cycas_wood.json
+9e1dde5dcb454bbb66ba7b1525e12b898aa1ecf7 assets/neranta_ps/models/item/desert_bush.json
 7b07fdbc14de93885413d5da89512561ee445840 assets/neranta_ps/models/item/enriched_iron_ore.json
 c8e10643352fe6153e766b680e373f3a255ff744 assets/neranta_ps/models/item/glow_fence.json
 41cd7288d9cf22b284399647d06020292edea53c assets/neranta_ps/models/item/glow_fence_gate.json

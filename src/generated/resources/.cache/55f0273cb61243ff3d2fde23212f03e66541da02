@@ -1,0 +1,5 @@
+// 1.19.2	2023-01-16T15:56:30.5711523	Tags for minecraft:worldgen/biome
+cc58affdbfd54b942681c61b9dacd892b9c0542b data/minecraft/tags/worldgen/biome/has_structure/jungle_temple.json
+707cabea783745d52cdf7ba1ca529121c49697ad data/minecraft/tags/worldgen/biome/has_structure/mineshaft.json
+b11d6d33fcea7d0d37bc0c9db4827d74434fda57 data/minecraft/tags/worldgen/biome/has_structure/pillager_outpost.json
+1e706c25fb334c998904b8142ffa370a97d77eb0 data/minecraft/tags/worldgen/biome/has_structure/ruined_portal_standard.json

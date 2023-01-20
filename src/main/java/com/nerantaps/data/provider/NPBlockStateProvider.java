@@ -18,6 +18,7 @@ public class NPBlockStateProvider extends BlockStateProvider {
         this.simpleBlock(NPBlocks.IRON_SAND.get());
         this.simpleBlock(NPBlocks.KIMBERLITE.get());
         this.simpleBlock(NPBlocks.SULFUR_ORE.get());
+        this.simpleBlock(NPBlocks.DESERT_BUSH.get());
         this.simpleBlock(NPBlocks.GLOW_LEAVES.get());
         this.simpleBlock(NPBlocks.GLOW_PLANKS.get());
         this.simpleBlock(NPBlocks.SULFUR_BLOCK.get());
@@ -49,6 +50,7 @@ public class NPBlockStateProvider extends BlockStateProvider {
         this.simpleBlockItem(NPBlocks.GLOW_PLANKS.get(), this.cubeAll(NPBlocks.GLOW_PLANKS.get()));
         this.simpleBlockItem(NPBlocks.KIMBERLITE.get(), this.cubeAll(NPBlocks.KIMBERLITE.get()));
         this.simpleBlockItem(NPBlocks.SULFUR_ORE.get(), this.cubeAll(NPBlocks.SULFUR_ORE.get()));
+        this.simpleBlockItem(NPBlocks.DESERT_BUSH.get(), this.cubeAll(NPBlocks.DESERT_BUSH.get()));
         this.simpleBlockItem(NPBlocks.CYCAS_WOOD.get(), this.models().cubeColumn("cycas_wood",
                 NerantaPs.prefix("block/cycas_log"), NerantaPs.prefix("block/cycas_log")));
         this.simpleBlockItem(NPBlocks.CYCAS_LEAVES.get(), this.cubeAll(NPBlocks.CYCAS_LEAVES.get()));
@@ -85,7 +87,6 @@ public class NPBlockStateProvider extends BlockStateProvider {
         this.simpleBlock(NPBlocks.GLOW_MOSS.get(), this.models().cross("glow_moss", this.blockTexture(NPBlocks.GLOW_MOSS.get())));
         this.simpleBlock(NPBlocks.GLOW_GRASS.get(), this.models().cross("glow_grass", this.blockTexture(NPBlocks.GLOW_GRASS.get())));
         this.simpleBlock(NPBlocks.GLOW_SAPLING.get(), this.models().cross("glow_sapling", this.blockTexture(NPBlocks.GLOW_SAPLING.get())));
-        this.simpleBlock(NPBlocks.DESERT_BUSH.get(), this.models().cross("desert_bush", this.blockTexture(NPBlocks.DESERT_BUSH.get())));
         this.simpleBlock(NPBlocks.GLOSSOPTERIS.get(), this.models().cross("glossopteris", this.blockTexture(NPBlocks.GLOSSOPTERIS.get())));
         this.simpleBlock(NPBlocks.CYCAS_SAPLING.get(), this.models().cross("cycas_sapling", this.blockTexture(NPBlocks.CYCAS_SAPLING.get())));
         this.simpleBlock(NPBlocks.UNDERWATER_FUNGUS.get(), this.models().crop("underwater_fungus", this.blockTexture(NPBlocks.UNDERWATER_FUNGUS.get())));
@@ -93,8 +94,6 @@ public class NPBlockStateProvider extends BlockStateProvider {
                 this.blockTexture(NPBlocks.GLOW_PLANKS.get()), this.blockTexture(NPBlocks.GLOW_PLANKS.get())));
         this.simpleBlockItem(NPBlocks.CYCAS_STAIRS.get(), this.models().stairs("glow_stairs", this.blockTexture(NPBlocks.CYCAS_PLANKS.get()),
                 this.blockTexture(NPBlocks.CYCAS_PLANKS.get()), this.blockTexture(NPBlocks.CYCAS_PLANKS.get())));
-        //this.simpleBlockItem(NPBlocks.GLOW_BUTTON.get(), this.models().button("glow_button", this.blockTexture(NPBlocks.GLOW_PLANKS.get())));
-        //this.simpleBlockItem(NPBlocks.CYCAS_BUTTON.get(), this.models().button("cycas_button", this.blockTexture(NPBlocks.CYCAS_PLANKS.get())));
         this.simpleBlockItem(NPBlocks.GLOW_FENCE.get(), this.models().fenceInventory("glow_fence", this.blockTexture(NPBlocks.GLOW_PLANKS.get())));
         this.simpleBlockItem(NPBlocks.CYCAS_FENCE.get(), this.models().fenceInventory("cycas_fence", this.blockTexture(NPBlocks.CYCAS_PLANKS.get())));
         this.simpleBlockItem(NPBlocks.GLOW_FENCE_GATE.get(), this.models().fenceGate("glow_fence_gate", this.blockTexture(NPBlocks.GLOW_PLANKS.get())));

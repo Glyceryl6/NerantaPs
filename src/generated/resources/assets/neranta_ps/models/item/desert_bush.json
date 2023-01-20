@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "neranta_ps:block/desert_bush"
-  }
+  "parent": "neranta_ps:block/desert_bush"
 }

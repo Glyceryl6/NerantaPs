@@ -1,6 +1,6 @@
 package com.nerantaps.blocks.grower;
 
-import com.nerantaps.data.level.feature.NPTreeFeatures;
+import com.nerantaps.data.worldgen.features.NPTreeFeatures;
 import net.minecraft.core.Holder;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
@@ -14,7 +14,7 @@ public class GlowTreeGrower extends AbstractTreeGrower {
 
     @Nullable @Override
     protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource randomSource, boolean largeHive) {
-        return NPTreeFeatures.GLOW_TREE;
+        return randomSource.nextBoolean() ? NPTreeFeatures.GLOW_TREE_01 : NPTreeFeatures.GLOW_TREE_02;
     }
 
 }

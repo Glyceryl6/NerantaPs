@@ -33,7 +33,7 @@ public class NPBlocks {
     public static final RegistryObject<Block> IRON_SANDSTONE = normal("iron_sandstone", defaultProperties().strength(1.0F, 40.0F));
     public static final RegistryObject<Block> MAGNETIC_STORM_VENT = register("magnetic_storm_vent", MagneticStormVent::new);
     public static final RegistryObject<Block> RED_HOT_IRON_SAND = register("red_hot_iron_sand", RedHotIronSand::new);
-    public static final RegistryObject<Block> DESERT_BUSH = register("desert_bush", () -> new FallingBlock(copy(Blocks.DEAD_BUSH)));
+    public static final RegistryObject<Block> DESERT_BUSH = register("desert_bush", DesertBush::new);
     public static final RegistryObject<Block> STRIPPED_GLOW_LOG = register("stripped_glow_log", () -> Blocks.log(MaterialColor.WOOD, MaterialColor.PODZOL));
     public static final RegistryObject<Block> STRIPPED_GLOW_WOOD = wood("stripped_glow_wood", MaterialColor.WOOD, 15);
     public static final RegistryObject<Block> GLOW_LEAVES = register("glow_leaves", () -> new LeavesBlock(copy(Blocks.OAK_LEAVES).lightLevel(s -> 11)));

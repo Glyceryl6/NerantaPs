@@ -1,7 +1,9 @@
 package com.nerantaps.data;
 
 import com.nerantaps.NerantaPs;
+import com.nerantaps.level.NPWorldGenerator;
 import com.nerantaps.data.provider.*;
+import com.nerantaps.data.provider.NPBiomeTagsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -20,8 +22,10 @@ public class NPDataGenerator {
         NPBlockTagsProvider blockTagsProvider = new NPBlockTagsProvider(generator, exFileHelper);
         generator.addProvider(event.includeServer(), blockTagsProvider);
         generator.addProvider(event.includeServer(), new NPItemTagsProvider(generator, blockTagsProvider, exFileHelper));
+        generator.addProvider(event.includeServer(), new NPBiomeTagsProvider(generator, exFileHelper));
         generator.addProvider(event.includeServer(), new NPLootTableProvider(generator));
         generator.addProvider(event.includeServer(), new NPRecipeProvider(generator));
+        generator.addProvider(event.includeServer(), new NPWorldGenerator(generator));
     }
 
 }
