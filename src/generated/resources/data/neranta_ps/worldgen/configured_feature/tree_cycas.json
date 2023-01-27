@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "neranta_ps:cycas_checked",
+    "features": [
+      {
+        "chance": 0.33333334,
+        "feature": "neranta_ps:mega_cycas_checked"
+      }
+    ]
+  }
+}

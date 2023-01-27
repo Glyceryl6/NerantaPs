@@ -9,40 +9,13 @@
           "biome": "neranta_ps:fluorescent_forest",
           "parameters": {
             "continentalness": [
-              0.06,
-              0.96
+              0.03,
+              0.3
             ],
             "depth": 0.0,
             "erosion": [
-              1.51,
-              2.41
-            ],
-            "humidity": [
-              -0.95,
-              0.95
-            ],
-            "offset": 0.0,
-            "temperature": [
-              -0.3833,
-              0.5166
-            ],
-            "weirdness": [
-              -0.9328,
-              -0.0328
-            ]
-          }
-        },
-        {
-          "biome": "neranta_ps:fluorescent_forest",
-          "parameters": {
-            "continentalness": [
-              0.06,
-              0.96
-            ],
-            "depth": 1.0,
-            "erosion": [
-              1.51,
-              2.41
+              0.51,
+              1.41
             ],
             "humidity": [
               -0.95,
@@ -63,40 +36,13 @@
           "biome": "neranta_ps:ancient_jungle",
           "parameters": {
             "continentalness": [
-              0.0433,
-              0.9766
+              0.11,
+              0.375
             ],
             "depth": 0.0,
             "erosion": [
-              1.4833,
-              2.4166
-            ],
-            "humidity": [
-              0.5333,
-              1.4665
-            ],
-            "offset": 0.0,
-            "temperature": [
-              0.2,
-              1.1332
-            ],
-            "weirdness": [
-              -0.9495,
-              -0.0162
-            ]
-          }
-        },
-        {
-          "biome": "neranta_ps:ancient_jungle",
-          "parameters": {
-            "continentalness": [
-              0.0433,
-              0.9766
-            ],
-            "depth": 1.0,
-            "erosion": [
-              1.4833,
-              2.4166
+              0.4833,
+              1.4166
             ],
             "humidity": [
               0.5333,
@@ -122,35 +68,8 @@
             ],
             "depth": 0.0,
             "erosion": [
-              1.5333,
-              2.3666
-            ],
-            "humidity": [
-              -1.4166,
-              -0.5833
-            ],
-            "offset": 0.0,
-            "temperature": [
-              0.5833,
-              1.4166
-            ],
-            "weirdness": [
-              -0.8995,
-              -0.0662
-            ]
-          }
-        },
-        {
-          "biome": "neranta_ps:magnet_desert",
-          "parameters": {
-            "continentalness": [
-              0.0983,
-              0.9316
-            ],
-            "depth": 1.0,
-            "erosion": [
-              1.5333,
-              2.3666
+              0.5333,
+              1.3666
             ],
             "humidity": [
               -1.4166,
@@ -176,35 +95,8 @@
             ],
             "depth": 0.0,
             "erosion": [
-              1.5666,
-              2.3333
-            ],
-            "humidity": [
-              0.6166,
-              1.3832
-            ],
-            "offset": 0.0,
-            "temperature": [
-              0.0833,
-              0.85
-            ],
-            "weirdness": [
-              -0.8662,
-              -0.0995
-            ]
-          }
-        },
-        {
-          "biome": "neranta_ps:bone_reef",
-          "parameters": {
-            "continentalness": [
-              -0.3833,
-              0.3833
-            ],
-            "depth": 1.0,
-            "erosion": [
-              1.5666,
-              2.3333
+              0.5666,
+              1.3333
             ],
             "humidity": [
               0.6166,
@@ -230,35 +122,8 @@
             ],
             "depth": 0.0,
             "erosion": [
-              1.5,
-              2.4
-            ],
-            "humidity": [
-              -1.05,
-              -0.15
-            ],
-            "offset": 0.0,
-            "temperature": [
-              -0.45,
-              0.45
-            ],
-            "weirdness": [
-              -0.9328,
-              -0.0328
-            ]
-          }
-        },
-        {
-          "biome": "neranta_ps:volcano",
-          "parameters": {
-            "continentalness": [
-              0.075,
-              0.975
-            ],
-            "depth": 1.0,
-            "erosion": [
-              1.5,
-              2.4
+              0.5,
+              1.4
             ],
             "humidity": [
               -1.05,

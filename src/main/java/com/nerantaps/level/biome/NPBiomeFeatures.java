@@ -32,7 +32,10 @@ public abstract class NPBiomeFeatures {
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.RED_MUSHROOM_NORMAL);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_JUNGLE);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NPVegetationPlacements.TREE_ANCIENT_JUNGLE);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NPVegetationPlacements.TREES_CYCAS);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NPVegetationPlacements.NORMAL_OAK);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NPVegetationPlacements.ELDEN_TREES);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NPMiscPlacements.JUNGLE_MUSHROOM);
         builder.addCarver(GenerationStep.Carving.AIR, Carvers.CAVE_EXTRA_UNDERGROUND);
         builder.addCarver(GenerationStep.Carving.AIR, Carvers.CAVE);
         builder.addCarver(GenerationStep.Carving.AIR, Carvers.CANYON);
@@ -42,6 +45,7 @@ public abstract class NPBiomeFeatures {
 
     public static BiomeGenerationSettings.Builder magnetDesertFeature() {
         BiomeGenerationSettings.Builder builder = new BiomeGenerationSettings.Builder();
+        builder.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, NPMiscPlacements.MAGNETIC_STORM_VENT_PILLAR);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, NPVegetationPlacements.PATCH_DESERT_BUSH);
         BiomeDefaultFeatures.addDefaultCarversAndLakes(builder);
         BiomeDefaultFeatures.addDefaultMonsterRoom(builder);

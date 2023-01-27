@@ -47,7 +47,10 @@
       "minecraft:red_mushroom_normal",
       "minecraft:patch_grass_jungle",
       "neranta_ps:tree_ancient_jungle",
-      "neranta_ps:normal_oak"
+      "neranta_ps:trees_cycas",
+      "neranta_ps:normal_oak",
+      "neranta_ps:elden_trees",
+      "neranta_ps:jungle_mushroom"
     ]
   ],
   "precipitation": "rain",

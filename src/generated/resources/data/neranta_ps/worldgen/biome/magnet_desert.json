@@ -28,7 +28,9 @@
       "minecraft:fossil_upper",
       "minecraft:fossil_lower"
     ],
-    [],
+    [
+      "neranta_ps:magnetic_storm_vent_pillar"
+    ],
     [],
     [
       "minecraft:ore_coal_upper",

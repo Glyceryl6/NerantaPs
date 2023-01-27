@@ -2,22 +2,26 @@ package com.nerantaps.data.worldgen.features;
 
 import com.nerantaps.data.worldgen.placement.NPTreePlacements;
 import com.nerantaps.registry.NPBlocks;
+import com.nerantaps.registry.NPFeatures;
 import net.minecraft.core.Holder;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.levelgen.feature.*;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.MegaJungleFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.stateproviders.*;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.MegaJungleTrunkPlacer;
 
 import java.util.List;
 
-import static net.minecraft.data.worldgen.features.VegetationFeatures.*;
+import static net.minecraft.data.worldgen.features.VegetationFeatures.grassPatch;
 
 public class NPVegetationFeatures {
 
@@ -35,14 +39,19 @@ public class NPVegetationFeatures {
     public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_ELDEN_FERN =
             FeatureUtils.register("neranta_ps:patch_elden_fern", Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
                     new SimpleBlockConfiguration(BlockStateProvider.simple(NPBlocks.ELDEN_FERN.get())), List.of(Blocks.GRASS_BLOCK)));
-    public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_DESERT_BUSH =
-            FeatureUtils.register("neranta_ps:patch_desert_bush", Feature.RANDOM_PATCH,
-                    grassPatch(BlockStateProvider.simple(NPBlocks.DESERT_BUSH.get()), 4));
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> PATCH_DESERT_BUSH =
+            FeatureUtils.register("neranta_ps:patch_desert_bush", NPFeatures.PATCH_DESERT_BUSH.get());
     public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> TREE_ANCIENT_JUNGLE =
             FeatureUtils.register("neranta_ps:tree_ancient_jungle", Feature.TREE,
                     new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.JUNGLE_LOG.defaultBlockState()),
                             new MegaJungleTrunkPlacer(11, 2, 19), BlockStateProvider.simple(Blocks.JUNGLE_LEAVES.defaultBlockState()),
                             new MegaJungleFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 2),
                             new TwoLayersFeatureSize(1, 1, 2)).build());
+    public static final Holder<ConfiguredFeature<RandomFeatureConfiguration, ?>> ELDEN_TREE =
+            FeatureUtils.register("neranta_ps:elden_tree_0", Feature.RANDOM_SELECTOR,
+                    new RandomFeatureConfiguration(List.of(), NPTreePlacements.ELDEN_TREE_CHECKED));
+    public static final Holder<ConfiguredFeature<RandomFeatureConfiguration, ?>> TREE_CYCAS =
+            FeatureUtils.register("neranta_ps:tree_cycas", Feature.RANDOM_SELECTOR, new RandomFeatureConfiguration(
+            List.of(new WeightedPlacedFeature(NPTreePlacements.MEGA_CYCAS_CHECKED, 0.33333334F)), NPTreePlacements.CYCAS_CHECKED));
 
 }

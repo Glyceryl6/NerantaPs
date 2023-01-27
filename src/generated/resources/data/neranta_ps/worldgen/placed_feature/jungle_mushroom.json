@@ -1,9 +1,12 @@
 {
-  "feature": "neranta_ps:patch_desert_bush",
+  "feature": "neranta_ps:jungle_mushroom",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 2
+      "type": "minecraft:count",
+      "count": 1
+    },
+    {
+      "type": "minecraft:in_square"
     },
     {
       "type": "minecraft:heightmap",

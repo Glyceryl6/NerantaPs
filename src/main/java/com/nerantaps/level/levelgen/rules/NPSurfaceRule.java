@@ -43,10 +43,9 @@ public class NPSurfaceRule {
         SurfaceRules.RuleSource volcanoRule = createNormalRuleSource(NPBiomes.VOLCANO, Blocks.SMOOTH_BASALT, Blocks.BASALT);
         SurfaceRules.RuleSource magnetDesertRule = createSpecialRuleSource(NPBiomes.MAGNET_DESERT,
                 NPBlocks.IRON_SAND.get(), NPBlocks.IRON_SAND.get(), NPBlocks.IRON_SANDSTONE.get(), Blocks.BLACK_TERRACOTTA, -4, -1, 0);
-        SurfaceRules.RuleSource fluorescentForestRule = createNormalRuleSource(NPBiomes.FLUORESCENT_FOREST, Blocks.GRASS_BLOCK, Blocks.DIRT);
         builder.add(SurfaceRules.ifTrue(SurfaceRules.verticalGradient("bedrock_floor",
                         VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(5)), BEDROCK))
-                .add(ancientJungleRule, boneReefRule, volcanoRule, magnetDesertRule, fluorescentForestRule);
+                .add(ancientJungleRule, boneReefRule, volcanoRule, magnetDesertRule, overworld());
         builder.add(SurfaceRules.ifTrue(SurfaceRules.verticalGradient("deepslate",
                 VerticalAnchor.absolute(0), VerticalAnchor.absolute(8)), DEEPSLATE));
         return SurfaceRules.sequence(builder.build().toArray(SurfaceRules.RuleSource[]::new));

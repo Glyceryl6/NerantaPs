@@ -24,7 +24,10 @@ public class NerantaPs {
         NPFeatures.FEATURES.register(this.eventBus);
         NPEntities.ENTITY_TYPES.register(this.eventBus);
         NPNoises.NOISE_GENERATORS.register(this.eventBus);
+        NPTrunkPlacer.TRUNK_PLACER.register(this.eventBus);
         NPDimensions.DIMENSION_TYPES.register(this.eventBus);
+        NPBlockEntities.BLOCK_ENTITY.register(this.eventBus);
+        NPFoliagePlacer.FOLIAGE_PLACER.register(this.eventBus);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
