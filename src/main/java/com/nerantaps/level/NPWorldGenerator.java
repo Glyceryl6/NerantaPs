@@ -5,20 +5,14 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.logging.LogUtils;
-import com.mojang.serialization.DynamicOps;
-import com.mojang.serialization.Encoder;
-import com.mojang.serialization.JsonOps;
-import com.mojang.serialization.Lifecycle;
+import com.mojang.serialization.*;
 import com.nerantaps.NerantaPs;
 import com.nerantaps.level.biome.builder.NPSurfaceBiomeBuilder;
 import com.nerantaps.level.biome.NPBiomeMaker;
 import com.nerantaps.registry.NPDimensions;
 import com.nerantaps.registry.NPNoises;
 import net.minecraft.core.*;
-import net.minecraft.data.BuiltinRegistries;
-import net.minecraft.data.CachedOutput;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.DataProvider;
+import net.minecraft.data.*;
 import net.minecraft.resources.RegistryOps;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -110,8 +104,8 @@ public record NPWorldGenerator(DataGenerator generator) implements DataProvider 
                 }
                 DataProvider.saveStable(cache, optional.get(), path);
             }
-        } catch (IOException ioexception) {
-            LOGGER.error("Couldn't save element {}", path, ioexception);
+        } catch (IOException exception) {
+            LOGGER.error("Couldn't save element {}", path, exception);
         }
     }
 

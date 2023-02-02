@@ -13,10 +13,12 @@ public class EntityHandler {
 
     @SubscribeEvent
     public static void onLivingAttack(LivingAttackEvent event) {
+        int armorCount = 0;
         if (event.getSource().isFire() && event.getEntity() instanceof Player player) {
             for (EquipmentSlot slots : EquipmentSlot.values()) {
-                boolean flag = slots.getType() == EquipmentSlot.Type.ARMOR;
-                if (flag && player.getItemBySlot(slots).getItem() instanceof CycasArmor) {
+                boolean flag1 = slots.getType() == EquipmentSlot.Type.ARMOR;
+                boolean flag2 = player.getItemBySlot(slots).getItem() instanceof CycasArmor;
+                if (flag1 && (armorCount += flag2 ? 1 : 0) == 4) {
                     player.clearFire();
                     event.setCanceled(true);
                 }
