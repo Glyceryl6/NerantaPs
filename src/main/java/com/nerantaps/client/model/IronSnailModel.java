@@ -7,6 +7,7 @@ import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.util.Mth;
 
 public class IronSnailModel<T extends IronSnail> extends EntityModel<T> {
 
@@ -47,7 +48,41 @@ public class IronSnailModel<T extends IronSnail> extends EntityModel<T> {
 
     @Override
     public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-
+        this.shell.zRot = Mth.cos(limbSwing * 0.625F) * 0.5F * limbSwingAmount;
+        this.head.yRot = Mth.cos(limbSwing * 0.625F) * 0.5F * limbSwingAmount;
+        this.ass.yRot = Mth.cos(limbSwing * 0.625F) * 0.2F * limbSwingAmount;
+        this.shell.yRot = -1.0265F * (float) Math.PI / 180.0F;
+        if (entity.getRetractionTime() > 0) {
+            float f = entity.getRetractionTime();
+            if (f > 180) {
+                this.shell.xRot += this.degree(0.25F);
+                this.head.xRot -= this.degree(-1.5F);
+                this.ass.xRot -= this.degree(1.0F);
+                this.shell.y += 0.05F;
+                this.head.z += 0.05F;
+            } else if (f > 40) {
+                this.head.xRot = (float) Math.PI / 2.0F;
+                this.ass.xRot = this.degree(-67.5F);
+            } else if (f > 20) {
+                this.shell.xRot -= this.degree(0.25F);
+                this.head.xRot += this.degree(-1.5F);
+                this.ass.xRot += this.degree(1.0F);
+                this.shell.y -= 0.05F;
+                this.head.z -= 0.05F;
+            }
+        } else {
+            this.shell.xRot = 0.0F;
+            this.head.xRot = 0.0F;
+            this.ass.xRot = 0.0F;
+            this.shell.y = 20.0F;
+            this.head.y = 21.0F;
+            this.head.z = 0.0F;
+            this.ass.y = 22.0F;
+        }
+    }
+    
+    private float degree(float f) {
+        return f * ((float) Math.PI / 180.0F);
     }
 
     @Override

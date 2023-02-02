@@ -1,21 +1,20 @@
 package com.nerantaps.entity.animal;
 
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
+import net.minecraft.network.syncher.*;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.FloatGoal;
-import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.network.NetworkHooks;
 
 public class IronSnail extends PathfinderMob {
+
+    private static final EntityDataAccessor<Integer> RETRACTION_TIME = SynchedEntityData.defineId(IronSnail.class, EntityDataSerializers.INT);
 
     public IronSnail(EntityType<? extends IronSnail> type, Level level) {
         super(type, level);
@@ -33,25 +32,57 @@ public class IronSnail extends PathfinderMob {
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.KNOCKBACK_RESISTANCE, 10.0F)
-                .add(Attributes.MOVEMENT_SPEED, 0.17F)
+                .add(Attributes.MOVEMENT_SPEED, 0.15F)
                 .add(Attributes.FOLLOW_RANGE, 16.0F)
                 .add(Attributes.MAX_HEALTH, 10.0F)
                 .add(Attributes.ARMOR, 10.0F);
     }
 
     @Override
-    public SoundEvent getHurtSound(DamageSource ds) {
-        return SoundEvents.GENERIC_HURT;
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        this.entityData.define(RETRACTION_TIME, 0);
     }
 
     @Override
-    public SoundEvent getDeathSound() {
-        return SoundEvents.GENERIC_DEATH;
+    public void addAdditionalSaveData(CompoundTag compound) {
+        super.addAdditionalSaveData(compound);
+        compound.putInt("RetractionTime", this.entityData.get(RETRACTION_TIME));
     }
 
     @Override
-    public MobType getMobType() {
-        return MobType.UNDEFINED;
+    public void readAdditionalSaveData(CompoundTag compound) {
+        super.readAdditionalSaveData(compound);
+        this.entityData.set(RETRACTION_TIME, compound.getInt("RetractionTime"));
+    }
+
+    @Override
+    public void aiStep() {
+        super.aiStep();
+        if (this.getRetractionTime() > 0) {
+            this.entityData.set(RETRACTION_TIME, this.getRetractionTime() - 1);
+            this.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.0F);
+        } else {
+            this.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.15F);
+        }
+    }
+
+    @Override
+    public boolean hurt(DamageSource source, float amount) {
+        if (this.isInvulnerableTo(source)) {
+            return false;
+        } else {
+            if (this.getRetractionTime() <= 0) {
+                this.entityData.set(RETRACTION_TIME, 200);
+            } else if (this.getRetractionTime() < 160 && this.getRetractionTime() > 40) {
+                amount /= 1.5F;
+            }
+            return super.hurt(source, amount);
+        }
+    }
+
+    public int getRetractionTime() {
+        return this.entityData.get(RETRACTION_TIME);
     }
 
     @Override
