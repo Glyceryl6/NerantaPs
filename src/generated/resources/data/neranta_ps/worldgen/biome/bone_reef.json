@@ -1,5 +1,7 @@
 {
-  "carvers": {},
+  "carvers": {
+    "air": "minecraft:canyon"
+  },
   "downfall": 1.0,
   "effects": {
     "fog_color": 12638463,
@@ -19,7 +21,9 @@
       "minecraft:fossil_upper",
       "minecraft:fossil_lower"
     ],
-    [],
+    [
+      "neranta_ps:bone_reef_small"
+    ],
     [],
     [
       "minecraft:ore_coal_upper",
@@ -42,6 +46,8 @@
     [],
     [],
     [
+      "minecraft:seagrass_river",
+      "minecraft:kelp_cold",
       "minecraft:seagrass_simple"
     ]
   ],

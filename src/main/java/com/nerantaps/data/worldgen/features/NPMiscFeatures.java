@@ -20,5 +20,6 @@ public class NPMiscFeatures {
             new DiskConfiguration(RuleBasedBlockStateProvider.simple(Blocks.GRAVEL), BlockPredicate.matchesBlocks(List.of(Blocks.SMOOTH_BASALT, Blocks.BASALT)), UniformInt.of(2, 5), 2));
     public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> JUNGLE_MUSHROOM = FeatureUtils.register("neranta_ps:jungle_mushroom", NPFeatures.JUNGLE_MUSHROOM.get());
     public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> MAGNETIC_STORM_VENT_PILLAR = FeatureUtils.register("neranta_ps:magnetic_storm_vent_pillar", NPFeatures.MAGNETIC_STORM_VENT_PILLAR.get());
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> BONE_REEF_SMALL = FeatureUtils.register("neranta_ps:bone_reef_small", NPFeatures.BONE_REEF_SMALL.get());
 
 }

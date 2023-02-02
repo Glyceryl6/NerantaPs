@@ -12,10 +12,10 @@ import net.minecraftforge.registries.RegistryObject;
 public class NPTrunkPlacer {
 
     public static final DeferredRegister<TrunkPlacerType<?>> TRUNK_PLACER = DeferredRegister.create(Registry.TRUNK_PLACER_TYPE_REGISTRY, NerantaPs.MOD_ID);
-    public static final RegistryObject<TrunkPlacerType<FlatTopGiantTrunkPlacer>> FLAT_TOP_GIANT_TRUNK_PLACER = register("flat_top_giant_trunk_placer", FlatTopGiantTrunkPlacer.CODEC);
+    public static final RegistryObject<TrunkPlacerType<FlatTopGiantTrunkPlacer>> FLAT_TOP_GIANT_TRUNK_PLACER = register("flat_top_giant", FlatTopGiantTrunkPlacer.CODEC);
 
     private static <P extends TrunkPlacer> RegistryObject<TrunkPlacerType<P>> register(String name, Codec<P> codec) {
-        return TRUNK_PLACER.register(name, () -> new TrunkPlacerType<>(codec));
+        return TRUNK_PLACER.register(name + "_trunk_placer", () -> new TrunkPlacerType<>(codec));
     }
 
 }

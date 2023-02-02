@@ -1,6 +1,7 @@
 package com.nerantaps.registry;
 
 import com.nerantaps.NerantaPs;
+import com.nerantaps.level.levelgen.feature.BoneReefSmall;
 import com.nerantaps.level.levelgen.feature.JungleMushroom;
 import com.nerantaps.level.levelgen.feature.MagneticStormVentPillar;
 import com.nerantaps.level.levelgen.feature.PatchDesertBush;
@@ -16,5 +17,6 @@ public class NPFeatures {
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> JUNGLE_MUSHROOM = FEATURES.register("jungle_mushroom", JungleMushroom::new);
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> PATCH_DESERT_BUSH  = FEATURES.register("patch_desert_bush", PatchDesertBush::new);
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> MAGNETIC_STORM_VENT_PILLAR = FEATURES.register("magnetic_storm_vent_pillar", MagneticStormVentPillar::new);
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> BONE_REEF_SMALL = FEATURES.register("bone_reef_small", BoneReefSmall::new);
 
 }

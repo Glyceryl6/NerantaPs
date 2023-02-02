@@ -21,10 +21,12 @@ public class NerantaPs {
         NPBiomes.BIOMES.register(this.eventBus);
         NPFluids.FLUIDS.register(this.eventBus);
         NPFluids.FLUID_TYPES.register(this.eventBus);
+        NPPotions.POTIONS.register(this.eventBus);
         NPFeatures.FEATURES.register(this.eventBus);
         NPEntities.ENTITY_TYPES.register(this.eventBus);
         NPNoises.NOISE_GENERATORS.register(this.eventBus);
         NPTrunkPlacer.TRUNK_PLACER.register(this.eventBus);
+        NPParticles.PARTICLE_TYPES.register(this.eventBus);
         NPDimensions.DIMENSION_TYPES.register(this.eventBus);
         NPBlockEntities.BLOCK_ENTITY.register(this.eventBus);
         NPFoliagePlacer.FOLIAGE_PLACER.register(this.eventBus);

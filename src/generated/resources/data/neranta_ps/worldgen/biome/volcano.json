@@ -26,6 +26,9 @@
     [],
     [],
     [
+      "neranta_ps:ore_kimberlite",
+      "neranta_ps:ore_sulfur",
+      "neranta_ps:ore_basalt",
       "neranta_ps:disk_gravel",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",

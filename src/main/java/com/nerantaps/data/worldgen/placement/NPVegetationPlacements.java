@@ -25,16 +25,15 @@ public class NPVegetationPlacements {
             NPVegetationFeatures.PATCH_ELDEN_FERN, RarityFilter.onAverageOnceEvery(32),
             InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
     public static final Holder<PlacedFeature> NORMAL_OAK = PlacementUtils.register("neranta_ps:normal_oak",
-            TreeFeatures.OAK, treePlacement(PlacementUtils.countExtra(10, 0.1F, 1), Blocks.OAK_SAPLING));
+            TreeFeatures.OAK, treePlacement(PlacementUtils.countExtra(2, 0.1F, 1), Blocks.OAK_SAPLING));
     public static final Holder<PlacedFeature> PATCH_DESERT_BUSH = PlacementUtils.register("neranta_ps:patch_desert_bush",
-            NPVegetationFeatures.PATCH_DESERT_BUSH, RarityFilter.onAverageOnceEvery(2), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+            NPVegetationFeatures.PATCH_DESERT_BUSH, CountPlacement.of(7), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
     public static final Holder<PlacedFeature> TREE_ANCIENT_JUNGLE = PlacementUtils.register("neranta_ps:tree_ancient_jungle",
-            NPVegetationFeatures.TREE_ANCIENT_JUNGLE, List.of(CountPlacement.of(3),
-                    InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0),
-                    PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));
+            TreeFeatures.MEGA_JUNGLE_TREE, List.of(CountPlacement.of(3), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0),
+                    PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.JUNGLE_SAPLING), BiomeFilter.biome()));
     public static final Holder<PlacedFeature> ELDEN_TREES = PlacementUtils.register("neranta_ps:elden_trees",
             NPVegetationFeatures.ELDEN_TREE, treePlacement(PlacementUtils.countExtra(1, 0.1F, 1)));
     public static final Holder<PlacedFeature> TREES_CYCAS = PlacementUtils.register("neranta_ps:trees_cycas",
-            NPVegetationFeatures.TREE_CYCAS, treePlacement(PlacementUtils.countExtra(1, 0.1F, 1)));
+            NPVegetationFeatures.TREE_CYCAS, treePlacement(PlacementUtils.countExtra(2, 0.1F, 1)));
 
 }

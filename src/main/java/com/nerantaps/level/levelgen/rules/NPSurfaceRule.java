@@ -8,7 +8,6 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.SurfaceRules;
-import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 
 import static net.minecraft.data.worldgen.SurfaceRuleData.*;
@@ -17,37 +16,32 @@ public class NPSurfaceRule {
 
     private static final SurfaceRules.ConditionSource MIDDLE_UNDER_FLOOR = SurfaceRules.stoneDepthCheck(0, true, 4, CaveSurface.FLOOR);
 
-    private static SurfaceRules.RuleSource createNormalRuleSource(ResourceKey<Biome> resourceKey, Block surfaceBlock, Block secondBlock) {
-        return SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(resourceKey),
-                SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, makeStateRule(surfaceBlock)),
-                SurfaceRules.ifTrue(SurfaceRules.waterStartCheck(-4, -1),
-                        SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, makeStateRule(secondBlock)))))));
-    }
-
-    private static SurfaceRules.RuleSource createSpecialRuleSource(ResourceKey<Biome> resourceKey, Block b1, Block b2, Block b3, Block b4, int o1, int o2, int o3) {
-        return SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.isBiome(resourceKey),
-                SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, makeStateRule(b1)),
-                        SurfaceRules.ifTrue(SurfaceRules.waterStartCheck(o1, 0),
-                                SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, makeStateRule(b2)))),
-                        SurfaceRules.ifTrue(SurfaceRules.waterStartCheck(o2, 0),
-                                SurfaceRules.sequence(SurfaceRules.ifTrue(MIDDLE_UNDER_FLOOR, makeStateRule(b3)))),
-                        SurfaceRules.ifTrue(SurfaceRules.waterStartCheck(o3, 0),
-                                SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, makeStateRule(b4)))))));
+    public static SurfaceRules.RuleSource createNormalRuleSource(ResourceKey<Biome> resourceKey, Block surfaceBlock, Block secondBlock, Block underwaterBlock) {
+        return SurfaceRules.ifTrue(SurfaceRules.isBiome(resourceKey), SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),
+                SurfaceRules.sequence(SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.sequence(SurfaceRules.ifTrue(
+                        SurfaceRules.waterBlockCheck(-1, 0), makeStateRule(surfaceBlock)),
+                        makeStateRule(underwaterBlock))), SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, makeStateRule(secondBlock)))));
     }
 
     public static SurfaceRules.RuleSource createSurfaceRule() {
         ImmutableList.Builder<SurfaceRules.RuleSource> builder = ImmutableList.builder();
-        SurfaceRules.RuleSource ancientJungleRule = createSpecialRuleSource(NPBiomes.ANCIENT_JUNGLE,
-                Blocks.GRASS_BLOCK, Blocks.DIRT, Blocks.MUD, Blocks.MUD, -3, -2, -1);
-        SurfaceRules.RuleSource boneReefRule = createNormalRuleSource(NPBiomes.BONE_REEF, Blocks.AIR, Blocks.WATER);
-        SurfaceRules.RuleSource volcanoRule = createNormalRuleSource(NPBiomes.VOLCANO, Blocks.SMOOTH_BASALT, Blocks.BASALT);
-        SurfaceRules.RuleSource magnetDesertRule = createSpecialRuleSource(NPBiomes.MAGNET_DESERT,
-                NPBlocks.IRON_SAND.get(), NPBlocks.IRON_SAND.get(), NPBlocks.IRON_SANDSTONE.get(), Blocks.BLACK_TERRACOTTA, -4, -1, 0);
-        builder.add(SurfaceRules.ifTrue(SurfaceRules.verticalGradient("bedrock_floor",
-                        VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(5)), BEDROCK))
-                .add(ancientJungleRule, boneReefRule, volcanoRule, magnetDesertRule, overworld());
-        builder.add(SurfaceRules.ifTrue(SurfaceRules.verticalGradient("deepslate",
-                VerticalAnchor.absolute(0), VerticalAnchor.absolute(8)), DEEPSLATE));
+        SurfaceRules.RuleSource volcanoRule = createNormalRuleSource(NPBiomes.VOLCANO, Blocks.SMOOTH_BASALT, Blocks.BASALT, Blocks.GRAVEL);
+        SurfaceRules.RuleSource ancientJungleRule = SurfaceRules.ifTrue(SurfaceRules.isBiome(NPBiomes.ANCIENT_JUNGLE),
+                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.sequence(
+                        SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.sequence(SurfaceRules.ifTrue(
+                                SurfaceRules.waterBlockCheck(-1, 0),
+                                makeStateRule(Blocks.GRASS_BLOCK)), makeStateRule(Blocks.DIRT))),
+                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, makeStateRule(Blocks.DIRT)),
+                        SurfaceRules.ifTrue(MIDDLE_UNDER_FLOOR, makeStateRule(Blocks.MUD)))));
+        SurfaceRules.RuleSource magnetDesertRule = SurfaceRules.ifTrue(SurfaceRules.isBiome(NPBiomes.MAGNET_DESERT),
+                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.sequence(
+                        SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.sequence(SurfaceRules.ifTrue(
+                                SurfaceRules.waterBlockCheck(-1, 0),
+                                makeStateRule(NPBlocks.IRON_SAND.get())), makeStateRule(Blocks.GRAVEL))),
+                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, makeStateRule(NPBlocks.IRON_SAND.get())),
+                        SurfaceRules.ifTrue(MIDDLE_UNDER_FLOOR, makeStateRule(NPBlocks.IRON_SANDSTONE.get())),
+                        SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, makeStateRule(Blocks.BLACK_TERRACOTTA)))));
+        builder.add(volcanoRule, ancientJungleRule, magnetDesertRule, overworld());
         return SurfaceRules.sequence(builder.build().toArray(SurfaceRules.RuleSource[]::new));
     }
 

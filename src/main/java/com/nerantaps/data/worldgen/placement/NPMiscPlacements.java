@@ -15,5 +15,7 @@ public class NPMiscPlacements {
             NPMiscFeatures.JUNGLE_MUSHROOM, CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
     public static final Holder<PlacedFeature> MAGNETIC_STORM_VENT_PILLAR = PlacementUtils.register("neranta_ps:magnetic_storm_vent_pillar",
             NPMiscFeatures.MAGNETIC_STORM_VENT_PILLAR, RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+    public static final Holder<PlacedFeature> BONE_REEF_SMALL = PlacementUtils.register("neranta_ps:bone_reef_small",
+            NPMiscFeatures.BONE_REEF_SMALL, RarityFilter.onAverageOnceEvery(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
 
 }
