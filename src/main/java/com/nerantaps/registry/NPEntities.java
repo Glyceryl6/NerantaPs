@@ -21,10 +21,10 @@ import net.minecraftforge.registries.RegistryObject;
 public class NPEntities {
 
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, NerantaPs.MOD_ID);
-    public static final RegistryObject<EntityType<PaloloWorm>> PALOLO_WORM = register("palolo_worm", PaloloWorm::new, MobCategory.MONSTER, 0.5F, 3.0F);
+    public static final RegistryObject<EntityType<PaloloWorm>> PALOLO_WORM = register("palolo_worm", PaloloWorm::new, MobCategory.MONSTER, 2.0F, 2.0F);
     public static final RegistryObject<EntityType<IronSnail>> IRON_SNAIL = register("iron_snail", IronSnail::new, MobCategory.CREATURE, 0.625F, 1.5F);
     public static final RegistryObject<EntityType<Dicynodon>> DICYNODON = register("dicynodon", Dicynodon::new, MobCategory.CREATURE, 1.5F, 0.9F);
-    public static final RegistryObject<EntityType<TubeWorm>> TUBE_WORM = register("tube_worm", TubeWorm::new, MobCategory.CREATURE, 0.5F, 2.0F);
+    public static final RegistryObject<EntityType<TubeWorm>> TUBE_WORM = register("tube_worm", TubeWorm::new, MobCategory.CREATURE, 0.5F, 1.8F);
     public static final RegistryObject<EntityType<Nautilus>> NAUTILUS = register("nautilus", Nautilus::new, MobCategory.CREATURE, 1.0F, 0.75F);
 
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.EntityFactory<T> factory, MobCategory category, float width, float height) {

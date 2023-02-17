@@ -25,12 +25,7 @@ import net.minecraftforge.common.ToolActions;
 public class Stripper extends Item {
 
     public Stripper() {
-        super(new Item.Properties().tab(NPTabs.TAB_NERANTA_TAB_1).durability(64));
-    }
-
-    @Override
-    public boolean isRepairable(ItemStack itemStack) {
-        return false;
+        super(new Item.Properties().tab(NPTabs.TAB_NERANTA_TAB_1).setNoRepair().durability(64));
     }
 
     @Override
