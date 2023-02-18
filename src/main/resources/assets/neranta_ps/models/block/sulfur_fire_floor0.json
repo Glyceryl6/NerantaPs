@@ -2,5 +2,6 @@
   "parent": "minecraft:block/template_fire_floor",
   "textures": {
     "fire": "neranta_ps:block/sulfur_fire_0"
-  }
+  },
+  "render_type": "cutout"
 }

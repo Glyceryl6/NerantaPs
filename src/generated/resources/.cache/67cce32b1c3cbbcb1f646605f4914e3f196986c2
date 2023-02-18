@@ -1,4 +1,4 @@
-// 1.19.2	2023-01-09T14:49:04.4105195	LootTables
+// 1.19.2	2023-02-17T20:31:27.826788	LootTables
 f022a32cd143cbc8ae55b3718872091ed8fb49bd data/neranta_ps/loot_tables/blocks/abysmal_sea_rock.json
 1c2561944bd4d5c33fd14330569c14a5925fe134 data/neranta_ps/loot_tables/blocks/black_smoker.json
 23b204ecc07c5f628767134d728c53158a48af15 data/neranta_ps/loot_tables/blocks/combustible_ice.json
@@ -38,6 +38,11 @@ bfc31f8b949175da0a64ad00231611c85e74f367 data/neranta_ps/loot_tables/blocks/glow
 ad674165384f409d1c5dcc7bc091c7a4a37780dc data/neranta_ps/loot_tables/blocks/iron_sandstone.json
 1817bcccde6c49361974d7ddf6102cd4f585f1ba data/neranta_ps/loot_tables/blocks/kimberlite.json
 790912577acb6cbcd239c9d590edf23233a9aff0 data/neranta_ps/loot_tables/blocks/magnetic_storm_vent.json
+62d59de5a220c353c900a02b990210ed1cad9af1 data/neranta_ps/loot_tables/blocks/potted_cycas_sapling.json
+6aec508e66529cc5a636b7e780be30202d3091fe data/neranta_ps/loot_tables/blocks/potted_elden_fern.json
+4faa5e7d42eebd3ab6c4a0e65e3e0460f6baceae data/neranta_ps/loot_tables/blocks/potted_glossopteris.json
+fb64836f29e3881c51c9fd151365dd520f8dbcf9 data/neranta_ps/loot_tables/blocks/potted_glow_sapling.json
+92b56a60c298fbec2cb6fc5772549a256a7d88f5 data/neranta_ps/loot_tables/blocks/potted_underwater_fungus.json
 9a8b116028ae12e1620d31445ddb3057191d2353 data/neranta_ps/loot_tables/blocks/red_hot_iron_sand.json
 fc69a78a03165de339d0fe9a0d4c1854e953e545 data/neranta_ps/loot_tables/blocks/rotten_flesh_block.json
 8271ce2f1804a38caeef96e1c258539cf29f6551 data/neranta_ps/loot_tables/blocks/stripped_cycas_log.json
