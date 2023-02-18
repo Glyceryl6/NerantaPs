@@ -5,10 +5,14 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.network.NetworkHooks;
+
+import java.util.Objects;
 
 public class IronSnail extends PathfinderMob {
 
@@ -38,12 +42,9 @@ public class IronSnail extends PathfinderMob {
     @Override
     public void aiStep() {
         super.aiStep();
-        if (!this.level.isClientSide()) {
-            if (this.inShellAnimationState.isStarted()) {
-                this.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.0F);
-            } else {
-                this.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.15F);
-            }
+        if (!this.level.isClientSide() && this.attributes.hasAttribute(Attributes.MOVEMENT_SPEED)) {
+            float f = this.inShellAnimationState.isStarted() ? 0.0F : 0.15F;
+            Objects.requireNonNull(this.getAttribute(Attributes.MOVEMENT_SPEED)).setBaseValue(f);
         }
     }
 
@@ -51,10 +52,9 @@ public class IronSnail extends PathfinderMob {
     public boolean hurt(DamageSource source, float amount) {
         if (this.level.isClientSide()) {
             this.inShellAnimationState.startIfStopped(this.tickCount);
-        } else {
-            amount /= 2.0F;
         }
-        return super.hurt(source, amount);
+        return !(source.isProjectile() || source.isDamageHelmet() || source.isFall()
+                || source.isExplosion() || source == DamageSource.DROWN);
     }
 
     @Override
