@@ -4,16 +4,11 @@ import com.nerantaps.NerantaPs;
 import com.nerantaps.blocks.*;
 import com.nerantaps.blocks.grower.CycasGrower;
 import com.nerantaps.blocks.grower.GlowTreeGrower;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -22,8 +17,6 @@ import java.util.function.Supplier;
 
 import static com.nerantaps.utils.NPBlockUtils.*;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-@SuppressWarnings("removal")
 public class NPBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, NerantaPs.MOD_ID);
@@ -79,6 +72,11 @@ public class NPBlocks {
     public static final RegistryObject<Block> UNDERWATER_FUNGUS = register("underwater_fungus", UnderwaterFungus::new);
     public static final RegistryObject<Block> ROTTEN_FLESH_BLOCK = register("rotten_flesh_block", RottenFleshBlock::new);
     public static final RegistryObject<Block> PALOLO_WORM_HOLE = register("palolo_worm_hole", PaloloWormHole::new);
+    public static final RegistryObject<Block> POTTED_GLOW_SAPLING = flowerPot("potted_glow_sapling", GLOW_SAPLING);
+    public static final RegistryObject<Block> POTTED_CYCAS_SAPLING = flowerPot("potted_cycas_sapling", CYCAS_SAPLING);
+    public static final RegistryObject<Block> POTTED_ELDEN_FERN = flowerPot("potted_elden_fern", ELDEN_FERN);
+    public static final RegistryObject<Block> POTTED_GLOSSOPTERIS = flowerPot("potted_glossopteris", GLOSSOPTERIS);
+    public static final RegistryObject<Block> POTTED_UNDERWATER_FUNGUS = flowerPot("potted_underwater_fungus", UNDERWATER_FUNGUS);
 
     private static RotatedPillarBlock glowLog(Supplier<Block> strippedBlock, MaterialColor barkColor) {
         return new AxeStrippedBlock(strippedBlock, BlockBehaviour.Properties.of(Material.WOOD, (state) ->
@@ -96,26 +94,6 @@ public class NPBlocks {
 
     private static BlockBehaviour.Properties copy(BlockBehaviour blockBehaviour) {
         return BlockBehaviour.Properties.copy(blockBehaviour);
-    }
-
-    @SubscribeEvent
-    public static void registerRenderLayer(FMLClientSetupEvent event) {
-        ItemBlockRenderTypes.setRenderLayer(ELDEN_FERN.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(DESERT_BUSH.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(SULFUR_FIRE.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(GLOSSOPTERIS.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(UNDERWATER_FUNGUS.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(GLOW_DOOR.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(GLOW_MOSS.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(GLOW_GRASS.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(GLOW_SAPLING.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(GLOW_TRAPDOOR.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(GLOW_LEAVES.get(), RenderType.cutoutMipped());
-        ItemBlockRenderTypes.setRenderLayer(CYCAS_DOOR.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(CYCAS_SAPLING.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(CYCAS_TRAPDOOR.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(CYCAS_LEAVES.get(), RenderType.cutoutMipped());
-        ItemBlockRenderTypes.setRenderLayer(COMBUSTIBLE_ICE.get(), RenderType.translucent());
     }
 
 }

@@ -44,6 +44,8 @@ public class NPBlockTagsProvider extends BlockTagsProvider {
         this.tag(BlockTags.WOODEN_BUTTONS).add(NPBlocks.GLOW_BUTTON.get(), NPBlocks.CYCAS_BUTTON.get());
         this.tag(BlockTags.WOODEN_TRAPDOORS).add(NPBlocks.GLOW_TRAPDOOR.get(), NPBlocks.CYCAS_TRAPDOOR.get());
         this.tag(BlockTags.WOODEN_PRESSURE_PLATES).add(NPBlocks.GLOW_PRESSURE_PLATE.get(), NPBlocks.CYCAS_PRESSURE_PLATE.get());
+        this.tag(BlockTags.FLOWER_POTS).add(NPBlocks.POTTED_GLOW_SAPLING.get(), NPBlocks.POTTED_CYCAS_SAPLING.get(),
+                NPBlocks.POTTED_ELDEN_FERN.get(), NPBlocks.POTTED_GLOSSOPTERIS.get(), NPBlocks.POTTED_UNDERWATER_FUNGUS.get());
         this.tag(BlockTags.GEODE_INVALID_BLOCKS).add(NPBlocks.NASCENT_LAVA.get(), NPBlocks.COMBUSTIBLE_ICE.get());
         this.tag(BlockTags.FENCE_GATES).add(NPBlocks.GLOW_FENCE_GATE.get(), NPBlocks.CYCAS_FENCE_GATE.get());
         this.tag(BlockTags.REPLACEABLE_PLANTS).add(NPBlocks.ELDEN_FERN.get(), NPBlocks.GLOSSOPTERIS.get());

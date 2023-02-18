@@ -66,6 +66,11 @@ public class NPBlockLoot extends BlockLoot {
         this.dropWhenSilkTouch(NPBlocks.BLACK_SMOKER.get());
         this.dropWhenSilkTouch(NPBlocks.COMBUSTIBLE_ICE.get());
         this.dropWhenSilkTouch(NPBlocks.MAGNETIC_STORM_VENT.get());
+        this.dropPottedContents(NPBlocks.POTTED_ELDEN_FERN.get());
+        this.dropPottedContents(NPBlocks.POTTED_GLOSSOPTERIS.get());
+        this.dropPottedContents(NPBlocks.POTTED_GLOW_SAPLING.get());
+        this.dropPottedContents(NPBlocks.POTTED_CYCAS_SAPLING.get());
+        this.dropPottedContents(NPBlocks.POTTED_UNDERWATER_FUNGUS.get());
         this.add(NPBlocks.UNDERWATER_FUNGUS_BLOCK.get(), block ->
                 createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
         this.add(NPBlocks.GLOW_GRASS.get(), BlockLoot::createGrassDrops);

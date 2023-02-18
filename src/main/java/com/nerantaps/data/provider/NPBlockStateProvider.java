@@ -3,11 +3,20 @@ package com.nerantaps.data.provider;
 import com.nerantaps.NerantaPs;
 import com.nerantaps.registry.NPBlocks;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.Objects;
 
 public class NPBlockStateProvider extends BlockStateProvider {
+
+    protected static final ResourceLocation SOLID = new ResourceLocation("solid");
+    protected static final ResourceLocation CUTOUT = new ResourceLocation("cutout");
+    protected static final ResourceLocation CUTOUT_MIPPED = new ResourceLocation("cutout_mipped");
+    protected static final ResourceLocation TRANSLUCENT = new ResourceLocation("translucent");
 
     public NPBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
         super(gen, NerantaPs.MOD_ID, exFileHelper);
@@ -19,13 +28,10 @@ public class NPBlockStateProvider extends BlockStateProvider {
         this.simpleBlock(NPBlocks.KIMBERLITE.get());
         this.simpleBlock(NPBlocks.SULFUR_ORE.get());
         this.simpleBlock(NPBlocks.DESERT_BUSH.get());
-        this.simpleBlock(NPBlocks.GLOW_LEAVES.get());
         this.simpleBlock(NPBlocks.GLOW_PLANKS.get());
         this.simpleBlock(NPBlocks.SULFUR_BLOCK.get());
-        this.simpleBlock(NPBlocks.CYCAS_LEAVES.get());
         this.simpleBlock(NPBlocks.CYCAS_PLANKS.get());
         this.simpleBlock(NPBlocks.IRON_SANDSTONE.get());
-        this.simpleBlock(NPBlocks.COMBUSTIBLE_ICE.get());
         this.simpleBlock(NPBlocks.ABYSMAL_SEA_ROCK.get());
         this.simpleBlock(NPBlocks.RED_HOT_IRON_SAND.get());
         this.simpleBlock(NPBlocks.ENRICHED_IRON_ORE.get());
@@ -35,6 +41,9 @@ public class NPBlockStateProvider extends BlockStateProvider {
         this.logBlock((RotatedPillarBlock) NPBlocks.CYCAS_LOG.get());
         this.logBlock((RotatedPillarBlock) NPBlocks.STRIPPED_GLOW_LOG.get());
         this.logBlock((RotatedPillarBlock) NPBlocks.STRIPPED_CYCAS_LOG.get());
+        this.simpleBlockWithRenderType(NPBlocks.GLOW_LEAVES.get(), CUTOUT_MIPPED);
+        this.simpleBlockWithRenderType(NPBlocks.CYCAS_LEAVES.get(), CUTOUT_MIPPED);
+        this.simpleBlockWithRenderType(NPBlocks.COMBUSTIBLE_ICE.get(), TRANSLUCENT);
         this.axisBlock((RotatedPillarBlock) NPBlocks.GLOW_WOOD.get(),
                 NerantaPs.prefix("block/glow_log"), NerantaPs.prefix("block/glow_log"));
         this.axisBlock((RotatedPillarBlock) NPBlocks.CYCAS_WOOD.get(),
@@ -43,6 +52,21 @@ public class NPBlockStateProvider extends BlockStateProvider {
                 NerantaPs.prefix("block/stripped_glow_log"), NerantaPs.prefix("block/stripped_glow_log"));
         this.axisBlock((RotatedPillarBlock) NPBlocks.STRIPPED_CYCAS_WOOD.get(),
                 NerantaPs.prefix("block/stripped_cycas_log"), NerantaPs.prefix("block/stripped_cycas_log"));
+        this.simpleBlock(NPBlocks.POTTED_ELDEN_FERN.get(), this.models().withExistingParent(
+                NPBlocks.POTTED_ELDEN_FERN.getId().getPath(), "block/flower_pot_cross")
+                .renderType(CUTOUT).texture("plant", this.blockTexture(NPBlocks.ELDEN_FERN.get())));
+        this.simpleBlock(NPBlocks.POTTED_GLOSSOPTERIS.get(), this.models().withExistingParent(
+                NPBlocks.POTTED_GLOSSOPTERIS.getId().getPath(), "block/flower_pot_cross")
+                .renderType(CUTOUT).texture("plant", this.blockTexture(NPBlocks.GLOSSOPTERIS.get())));
+        this.simpleBlock(NPBlocks.POTTED_GLOW_SAPLING.get(), this.models().withExistingParent(
+                NPBlocks.POTTED_GLOW_SAPLING.getId().getPath(), "block/flower_pot_cross")
+                .renderType(CUTOUT).texture("plant", this.blockTexture(NPBlocks.GLOW_SAPLING.get())));
+        this.simpleBlock(NPBlocks.POTTED_CYCAS_SAPLING.get(), this.models().withExistingParent(
+                NPBlocks.POTTED_CYCAS_SAPLING.getId().getPath(), "block/flower_pot_cross")
+                .renderType(CUTOUT).texture("plant", this.blockTexture(NPBlocks.CYCAS_SAPLING.get())));
+        this.simpleBlock(NPBlocks.POTTED_UNDERWATER_FUNGUS.get(), this.models().withExistingParent(
+                NPBlocks.POTTED_UNDERWATER_FUNGUS.getId().getPath(), "block/flower_pot_cross")
+                .renderType(CUTOUT).texture("plant", this.blockTexture(NPBlocks.UNDERWATER_FUNGUS.get())));
         this.simpleBlockItem(NPBlocks.IRON_SAND.get(), this.cubeAll(NPBlocks.IRON_SAND.get()));
         this.simpleBlockItem(NPBlocks.GLOW_WOOD.get(), this.models().cubeColumn("glow_wood",
                 NerantaPs.prefix("block/glow_log"), NerantaPs.prefix("block/glow_log")));
@@ -71,25 +95,25 @@ public class NPBlockStateProvider extends BlockStateProvider {
         this.simpleBlockItem(NPBlocks.UNDERWATER_FUNGUS_BLOCK.get(), this.cubeAll(NPBlocks.UNDERWATER_FUNGUS_BLOCK.get()));
         this.fenceGateBlock((FenceGateBlock) NPBlocks.GLOW_FENCE_GATE.get(), this.blockTexture(NPBlocks.GLOW_PLANKS.get()));
         this.fenceGateBlock((FenceGateBlock) NPBlocks.CYCAS_FENCE_GATE.get(), this.blockTexture(NPBlocks.CYCAS_PLANKS.get()));
-        this.trapdoorBlock((TrapDoorBlock) NPBlocks.GLOW_TRAPDOOR.get(), this.blockTexture(NPBlocks.GLOW_PLANKS.get()), true);
-        this.trapdoorBlock((TrapDoorBlock) NPBlocks.CYCAS_TRAPDOOR.get(), this.blockTexture(NPBlocks.CYCAS_PLANKS.get()), true);
         this.pressurePlateBlock((PressurePlateBlock) NPBlocks.GLOW_PRESSURE_PLATE.get(), this.blockTexture(NPBlocks.GLOW_PLANKS.get()));
         this.pressurePlateBlock((PressurePlateBlock) NPBlocks.CYCAS_PRESSURE_PLATE.get(), this.blockTexture(NPBlocks.CYCAS_PLANKS.get()));
         this.slabBlock((SlabBlock) NPBlocks.GLOW_SLAB.get(), this.blockTexture(NPBlocks.GLOW_PLANKS.get()), this.blockTexture(NPBlocks.GLOW_PLANKS.get()));
         this.slabBlock((SlabBlock) NPBlocks.CYCAS_SLAB.get(), this.blockTexture(NPBlocks.CYCAS_PLANKS.get()), this.blockTexture(NPBlocks.CYCAS_PLANKS.get()));
-        this.doorBlock((DoorBlock) NPBlocks.GLOW_DOOR.get(), NerantaPs.prefix("block/glow_door_bottom"), NerantaPs.prefix("block/glow_door_top"));
-        this.doorBlock((DoorBlock) NPBlocks.CYCAS_DOOR.get(), NerantaPs.prefix("block/cycas_door_bottom"), NerantaPs.prefix("block/cycas_door_top"));
+        this.trapdoorBlockWithRenderType((TrapDoorBlock) NPBlocks.GLOW_TRAPDOOR.get(), this.blockTexture(NPBlocks.GLOW_PLANKS.get()), true, CUTOUT);
+        this.trapdoorBlockWithRenderType((TrapDoorBlock) NPBlocks.CYCAS_TRAPDOOR.get(), this.blockTexture(NPBlocks.CYCAS_PLANKS.get()), true, CUTOUT);
+        this.doorBlockWithRenderType((DoorBlock) NPBlocks.GLOW_DOOR.get(), NerantaPs.prefix("block/glow_door_bottom"), NerantaPs.prefix("block/glow_door_top"), CUTOUT);
+        this.doorBlockWithRenderType((DoorBlock) NPBlocks.CYCAS_DOOR.get(), NerantaPs.prefix("block/cycas_door_bottom"), NerantaPs.prefix("block/cycas_door_top"), CUTOUT);
         this.simpleBlock(NPBlocks.BLACK_SMOKER.get(), this.models().cubeTop("black_smoker",
                 NerantaPs.prefix("block/abysmal_sea_rock"), NerantaPs.prefix("block/black_smoker")));
         this.simpleBlock(NPBlocks.MAGNETIC_STORM_VENT.get(), this.models().cubeTop("magnetic_storm_vent",
                 NerantaPs.prefix("block/magnetic_storm_vent"), NerantaPs.prefix("block/magnetic_storm_vent_top")));
-        this.simpleBlock(NPBlocks.ELDEN_FERN.get(), this.models().cross("elden_fern", this.blockTexture(NPBlocks.ELDEN_FERN.get())));
-        this.simpleBlock(NPBlocks.GLOW_MOSS.get(), this.models().cross("glow_moss", this.blockTexture(NPBlocks.GLOW_MOSS.get())));
-        this.simpleBlock(NPBlocks.GLOW_GRASS.get(), this.models().cross("glow_grass", this.blockTexture(NPBlocks.GLOW_GRASS.get())));
-        this.simpleBlock(NPBlocks.GLOW_SAPLING.get(), this.models().cross("glow_sapling", this.blockTexture(NPBlocks.GLOW_SAPLING.get())));
-        this.simpleBlock(NPBlocks.GLOSSOPTERIS.get(), this.models().cross("glossopteris", this.blockTexture(NPBlocks.GLOSSOPTERIS.get())));
-        this.simpleBlock(NPBlocks.CYCAS_SAPLING.get(), this.models().cross("cycas_sapling", this.blockTexture(NPBlocks.CYCAS_SAPLING.get())));
-        this.simpleBlock(NPBlocks.UNDERWATER_FUNGUS.get(), this.models().crop("underwater_fungus", this.blockTexture(NPBlocks.UNDERWATER_FUNGUS.get())));
+        this.simpleBlock(NPBlocks.ELDEN_FERN.get(), this.models().cross("elden_fern", this.blockTexture(NPBlocks.ELDEN_FERN.get())).renderType(CUTOUT));
+        this.simpleBlock(NPBlocks.GLOW_MOSS.get(), this.models().cross("glow_moss", this.blockTexture(NPBlocks.GLOW_MOSS.get())).renderType(CUTOUT));
+        this.simpleBlock(NPBlocks.GLOW_GRASS.get(), this.models().cross("glow_grass", this.blockTexture(NPBlocks.GLOW_GRASS.get())).renderType(CUTOUT));
+        this.simpleBlock(NPBlocks.GLOW_SAPLING.get(), this.models().cross("glow_sapling", this.blockTexture(NPBlocks.GLOW_SAPLING.get())).renderType(CUTOUT));
+        this.simpleBlock(NPBlocks.GLOSSOPTERIS.get(), this.models().cross("glossopteris", this.blockTexture(NPBlocks.GLOSSOPTERIS.get())).renderType(CUTOUT));
+        this.simpleBlock(NPBlocks.CYCAS_SAPLING.get(), this.models().cross("cycas_sapling", this.blockTexture(NPBlocks.CYCAS_SAPLING.get())).renderType(CUTOUT));
+        this.simpleBlock(NPBlocks.UNDERWATER_FUNGUS.get(), this.models().crop("underwater_fungus", this.blockTexture(NPBlocks.UNDERWATER_FUNGUS.get())).renderType(CUTOUT));
         this.simpleBlockItem(NPBlocks.GLOW_STAIRS.get(), this.models().stairs("glow_stairs", this.blockTexture(NPBlocks.GLOW_PLANKS.get()),
                 this.blockTexture(NPBlocks.GLOW_PLANKS.get()), this.blockTexture(NPBlocks.GLOW_PLANKS.get())));
         this.simpleBlockItem(NPBlocks.CYCAS_STAIRS.get(), this.models().stairs("glow_stairs", this.blockTexture(NPBlocks.CYCAS_PLANKS.get()),
@@ -122,6 +146,10 @@ public class NPBlockStateProvider extends BlockStateProvider {
                 NerantaPs.prefix("block/abysmal_sea_rock"), NerantaPs.prefix("block/black_smoker")));
         this.simpleBlockItem(NPBlocks.MAGNETIC_STORM_VENT.get(), this.models().cubeTop("magnetic_storm_vent",
                 NerantaPs.prefix("block/magnetic_storm_vent"), NerantaPs.prefix("block/magnetic_storm_vent_top")));
+    }
+
+    public void simpleBlockWithRenderType(Block block, ResourceLocation type) {
+        simpleBlock(block, models().cubeAll(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)).getPath(), blockTexture(block)).renderType(type));
     }
 
 }
