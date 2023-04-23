@@ -60,7 +60,7 @@ public class NPBlockLoot extends BlockLoot {
         this.dropSelf(NPBlocks.CYCAS_TRAPDOOR.get());
         this.dropSelf(NPBlocks.CYCAS_FENCE_GATE.get());
         this.dropSelf(NPBlocks.CYCAS_PRESSURE_PLATE.get());
-        this.dropSelf(NPBlocks.MAPLE_LOG.get());
+//        this.dropSelf(NPBlocks.MAPLE_LOG.get());
         this.dropSelf(NPBlocks.MAPLE_WOOD.get());
         this.dropSelf(NPBlocks.MAPLE_PLANKS.get());
         this.dropSelf(NPBlocks.MAPLE_SAPLING.get());

@@ -172,7 +172,7 @@ public class NPRecipeProvider extends RecipeProvider {
         planksFromLogs(finishedRecipeConsumer, NPBlocks.MAPLE_PLANKS.get(), NPItemTags.MAPLE_LOGS);
         planksFromLogs(finishedRecipeConsumer, NPBlocks.CYCAS_PLANKS.get(), NPItemTags.CYCAS_LOGS);
         planksFromLogs(finishedRecipeConsumer, NPBlocks.GLOW_PLANKS.get(), NPItemTags.GLOW_LOGS);
-        woodFromLogs(finishedRecipeConsumer, NPBlocks.MAPLE_WOOD.get(), NPBlocks.MAPLE_LOG.get());
+//        woodFromLogs(finishedRecipeConsumer, NPBlocks.MAPLE_WOOD.get(), NPBlocks.MAPLE_LOG.get());
         woodFromLogs(finishedRecipeConsumer, NPBlocks.CYCAS_WOOD.get(), NPBlocks.CYCAS_LOG.get());
         woodFromLogs(finishedRecipeConsumer, NPBlocks.GLOW_WOOD.get(), NPBlocks.GLOW_LOG.get());
         slab(finishedRecipeConsumer, NPBlocks.IRON_PLATE_SLAB.get(), NPBlocks.IRON_PLATE_BLOCK.get());

@@ -71,7 +71,7 @@ public class NPBlockTagsProvider extends BlockTagsProvider {
                 NPBlocks.STRIPPED_GLOW_LOG.get(), NPBlocks.STRIPPED_GLOW_WOOD.get());
         this.tag(NPBlockTags.CYCAS_LOGS).add(NPBlocks.CYCAS_LOG.get(), NPBlocks.CYCAS_WOOD.get(),
                 NPBlocks.STRIPPED_CYCAS_LOG.get(), NPBlocks.STRIPPED_CYCAS_WOOD.get());
-        this.tag(NPBlockTags.MAPLE_LOGS).add(NPBlocks.MAPLE_LOG.get(), NPBlocks.MAPLE_WOOD.get(),
+        this.tag(NPBlockTags.MAPLE_LOGS).add(/*NPBlocks.MAPLE_LOG.get(), */NPBlocks.MAPLE_WOOD.get(),
                 NPBlocks.STRIPPED_MAPLE_LOG.get(), NPBlocks.STRIPPED_MAPLE_WOOD.get());
         this.tag(BlockTags.LOGS).addTag(NPBlockTags.GLOW_LOGS).addTag(NPBlockTags.CYCAS_LOGS).addTag(NPBlockTags.MAPLE_LOGS);
     }

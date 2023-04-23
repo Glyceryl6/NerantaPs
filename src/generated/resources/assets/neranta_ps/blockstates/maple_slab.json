@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "neranta_ps:block/maple_slab"
+    },
+    "type=double": {
+      "model": "neranta_ps:block/maple_planks"
+    },
+    "type=top": {
+      "model": "neranta_ps:block/maple_slab_top"
+    }
+  }
+}

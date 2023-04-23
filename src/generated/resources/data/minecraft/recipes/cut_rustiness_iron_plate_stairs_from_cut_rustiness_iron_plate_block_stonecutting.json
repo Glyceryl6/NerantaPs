@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 4,
+  "ingredient": {
+    "item": "neranta_ps:cut_rustiness_iron_plate_block"
+  },
+  "result": "neranta_ps:cut_rustiness_iron_plate_stairs"
+}

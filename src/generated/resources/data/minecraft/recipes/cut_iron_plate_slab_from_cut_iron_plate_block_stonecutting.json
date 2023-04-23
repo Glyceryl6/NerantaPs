@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "neranta_ps:cut_iron_plate_block"
+  },
+  "result": "neranta_ps:cut_iron_plate_slab"
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "full=false": {
+      "model": "neranta_ps:block/suck_blood_wart_block"
+    },
+    "full=true": {
+      "model": "neranta_ps:block/suck_blood_wart_block_full"
+    }
+  }
+}

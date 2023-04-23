@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "neranta_ps:block/suck_blood_wart_block_top",
+    "side": "neranta_ps:block/suck_blood_wart_block_2"
+  }
+}

@@ -36,11 +36,11 @@ import org.jetbrains.annotations.Nullable;
 @SuppressWarnings("deprecation")
 public class MapleLog extends RotatedPillarBlock {
 
-    public static final EnumProperty<MapleLogState> STATE_PROPERTY = EnumProperty.create("state", MapleLogState.class);
+    public static final EnumProperty<MapleLogState> STATE_PROPERTY = EnumProperty.create("sugar_state", MapleLogState.class);
 
     public MapleLog(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.defaultBlockState().setValue(STATE_PROPERTY, MapleLogState.DRY_NORTH));
+        this.registerDefaultState(this.stateDefinition.any().setValue(STATE_PROPERTY, MapleLogState.PLAIN));
     }
 
     @Override
@@ -107,7 +107,7 @@ public class MapleLog extends RotatedPillarBlock {
             itemStack.shrink(1);
             level.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.BOTTLE_FILL, SoundSource.NEUTRAL, 1.0F, 1.0F);
             if (itemStack.isEmpty()) {
-                player.setItemInHand(hand, new ItemStack(Items.HONEY_BOTTLE));
+                player.setItemInHand(hand, new ItemStack(NPItems.MAPLE_SYRUP.get()));
             } else if (!player.getInventory().add(new ItemStack(NPItems.MAPLE_SYRUP.get()))) {
                 player.drop(new ItemStack(NPItems.MAPLE_SYRUP.get()), false);
             }

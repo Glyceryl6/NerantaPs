@@ -56,24 +56,16 @@ public enum MapleLogState implements StringRepresentable {
 
     public static MapleLogState getWet(Direction direction) {
         switch (direction) {
-            case NORTH -> {
-                return WET_NORTH;
-            }
-            case SOUTH -> {
-                return WET_SOUTH;
-            }
-            case WEST -> {
-                return WET_WEST;
-            }
-            case EAST -> {
-                return WET_EAST;
-            }
+            case NORTH : return WET_NORTH;
+            case SOUTH : return WET_SOUTH;
+            case WEST : return WET_WEST;
+            case EAST : return WET_EAST;
         }
         throw new IllegalArgumentException("incompatible facing: " + direction);
     }
 
     static {
-        VALUES = MapleLogState.values();
+        VALUES = values();
     }
 
 }

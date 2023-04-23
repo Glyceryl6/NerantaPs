@@ -193,8 +193,8 @@ public class NPBlockStateProvider extends BlockStateProvider {
                 NerantaPs.prefix("block/glow_log"), NerantaPs.prefix("block/glow_log_top")));
         this.simpleBlockItem(NPBlocks.CYCAS_LOG.get(), this.models().cubeColumn("cycas_log",
                 NerantaPs.prefix("block/cycas_log"), NerantaPs.prefix("block/cycas_log_top")));
-        this.simpleBlockItem(NPBlocks.MAPLE_LOG.get(), this.models().cubeColumn("maple_log",
-                NerantaPs.prefix("block/maple_log"), NerantaPs.prefix("block/maple_log_top")));
+//        this.simpleBlockItem(NPBlocks.MAPLE_LOG.get(), this.models().cubeColumn("maple_log",
+//                NerantaPs.prefix("block/maple_log"), NerantaPs.prefix("block/maple_log_top")));
         this.simpleBlockItem(NPBlocks.STRIPPED_GLOW_LOG.get(), this.models().cubeColumn("stripped_glow_log",
                 NerantaPs.prefix("block/stripped_glow_log"), NerantaPs.prefix("block/stripped_glow_log_top")));
         this.simpleBlockItem(NPBlocks.STRIPPED_CYCAS_LOG.get(), this.models().cubeColumn("stripped_cycas_log",
@@ -219,8 +219,9 @@ public class NPBlockStateProvider extends BlockStateProvider {
 
     private void pottedPlants(Block block) {
         String name = Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)).getPath();
+        Block saplingBlock = ForgeRegistries.BLOCKS.getValue(NerantaPs.prefix(name.replaceFirst("potted_", "")));
         this.simpleBlock(block, this.models().withExistingParent(name, "block/flower_pot_cross")
-                .renderType(CUTOUT).texture("plant", this.blockTexture(block)));
+                .renderType(CUTOUT).texture("plant", this.blockTexture(saplingBlock)));
     }
 
     private ModelFile normalStairs(Block block) {

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.15,
+  "ingredient": {
+    "item": "neranta_ps:rustiness_iron_plate_block"
+  },
+  "result": "minecraft:iron_ingot"
+}

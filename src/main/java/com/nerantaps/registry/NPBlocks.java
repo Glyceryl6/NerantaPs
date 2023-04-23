@@ -114,7 +114,7 @@ public class NPBlocks {
     public static final RegistryObject<Block> STRIPPED_MAPLE_LOG = register("stripped_maple_log", () -> Blocks.log(MaterialColor.WOOD, MaterialColor.PODZOL));
     public static final RegistryObject<Block> STRIPPED_MAPLE_WOOD = wood("stripped_maple_wood", MaterialColor.WOOD, 0);
     public static final RegistryObject<Block> MAPLE_LEAVES = register("maple_leaves", () -> Blocks.leaves(SoundType.GRASS));
-    public static final RegistryObject<Block> MAPLE_LOG = register("maple_log", () -> new MapleLog(copy(Blocks.SPRUCE_LOG)));
+//    public static final RegistryObject<Block> MAPLE_LOG = register("maple_log", () -> new MapleLog(copy(Blocks.SPRUCE_LOG)));
     public static final RegistryObject<Block> MAPLE_WOOD = register("maple_wood", () -> new AxeStrippedBlock(STRIPPED_MAPLE_WOOD, copy(Blocks.SPRUCE_WOOD)));
     public static final RegistryObject<Block> MAPLE_PLANKS = normal("maple_planks", copy(Blocks.SPRUCE_PLANKS));
     public static final RegistryObject<Block> MAPLE_SLAB = slab("maple_slab", copy(Blocks.SPRUCE_SLAB));

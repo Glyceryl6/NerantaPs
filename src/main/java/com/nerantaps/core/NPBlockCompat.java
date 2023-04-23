@@ -38,7 +38,7 @@ public class NPBlockCompat {
         fireblock.setFlammable(NPBlocks.STRIPPED_MAPLE_LOG.get(), 5, 5);
         fireblock.setFlammable(NPBlocks.STRIPPED_MAPLE_WOOD.get(), 5, 5);
         fireblock.setFlammable(NPBlocks.MAPLE_LEAVES.get(), 30, 60);
-        fireblock.setFlammable(NPBlocks.MAPLE_LOG.get(), 5, 5);
+//        fireblock.setFlammable(NPBlocks.MAPLE_LOG.get(), 5, 5);
         fireblock.setFlammable(NPBlocks.MAPLE_WOOD.get(), 5, 5);
         fireblock.setFlammable(NPBlocks.MAPLE_PLANKS.get(), 5, 20);
         fireblock.setFlammable(NPBlocks.MAPLE_SLAB.get(), 5, 20);

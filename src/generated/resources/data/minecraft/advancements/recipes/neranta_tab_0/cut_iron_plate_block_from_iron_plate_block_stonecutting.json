@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_rust": {
+    "has_iron_plate_block": {
       "conditions": {
         "items": [
           {
             "items": [
-              "neranta_ps:rust"
+              "neranta_ps:iron_plate_block"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:iron_nugget"
+        "recipe": "minecraft:cut_iron_plate_block_from_iron_plate_block_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_rust",
+      "has_iron_plate_block",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:iron_nugget"
+      "minecraft:cut_iron_plate_block_from_iron_plate_block_stonecutting"
     ]
   }
 }

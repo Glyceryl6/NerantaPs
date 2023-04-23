@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "all": "neranta_ps:block/maple_planks",
+    "bottom": "neranta_ps:block/maple_planks",
+    "side": "neranta_ps:block/maple_planks",
+    "top": "neranta_ps:block/maple_planks"
+  }
+}
