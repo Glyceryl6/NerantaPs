@@ -1,14 +1,13 @@
 package com.nerantaps.client.model;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.nerantaps.client.animation.PaloloWormAnimation;
 import com.nerantaps.entity.monster.PaloloWorm;
-import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 
-public class PaloloWormModel<T extends PaloloWorm> extends EntityModel<T> {
+public class PaloloWormModel<T extends PaloloWorm> extends HierarchicalModel<T> {
 
     private final ModelPart part4;
 
@@ -66,12 +65,14 @@ public class PaloloWormModel<T extends PaloloWorm> extends EntityModel<T> {
 
     @Override
     public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-
+        this.root().getAllParts().forEach(ModelPart::resetPose);
+        this.animate(entity.idleAnimationState, PaloloWormAnimation.IDLE, ageInTicks);
+        this.animate(entity.drillAnimationState, PaloloWormAnimation.IN, ageInTicks);
     }
 
     @Override
-    public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-        this.part4.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+    public ModelPart root() {
+        return this.part4;
     }
 
 }

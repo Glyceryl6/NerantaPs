@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "neranta_ps:block/maple_log",
+    "down": "neranta_ps:block/maple_log_top",
+    "up": "neranta_ps:block/maple_log_top",
+    "north": "neranta_ps:block/maple_log_1",
+    "east": "neranta_ps:block/maple_log",
+    "south": "neranta_ps:block/maple_log",
+    "west": "neranta_ps:block/maple_log"
+  }
+}

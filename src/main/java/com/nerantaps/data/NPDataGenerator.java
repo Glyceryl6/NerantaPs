@@ -1,9 +1,8 @@
 package com.nerantaps.data;
 
 import com.nerantaps.NerantaPs;
-import com.nerantaps.level.NPWorldGenerator;
 import com.nerantaps.data.provider.*;
-import com.nerantaps.data.provider.NPBiomeTagsProvider;
+import com.nerantaps.level.NPWorldGenerator;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;

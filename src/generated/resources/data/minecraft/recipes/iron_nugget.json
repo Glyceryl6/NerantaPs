@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.15,
+  "ingredient": {
+    "item": "neranta_ps:rust"
+  },
+  "result": "minecraft:iron_nugget"
+}

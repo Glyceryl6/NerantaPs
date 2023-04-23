@@ -21,7 +21,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Optional;
 
-@ParametersAreNonnullByDefault
 public abstract class NascentLavaFluid extends ForgeFlowingFluid {
 
     private static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(

@@ -17,7 +17,7 @@ apply plugin: 'maven-publish'
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
 
-version = '1.19.2-1.0'
+version = '1.19.2-dev-1.0'
 group = 'com.nerantaps'
 archivesBaseName = 'NerantaPs'
 

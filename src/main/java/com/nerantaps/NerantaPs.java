@@ -21,6 +21,7 @@ public class NerantaPs {
         NPBiomes.BIOMES.register(this.eventBus);
         NPFluids.FLUIDS.register(this.eventBus);
         NPFluids.FLUID_TYPES.register(this.eventBus);
+        NPEffects.EFFECTS.register(this.eventBus);
         NPPotions.POTIONS.register(this.eventBus);
         NPFeatures.FEATURES.register(this.eventBus);
         NPEntities.ENTITY_TYPES.register(this.eventBus);

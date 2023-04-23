@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "neranta_ps:item/splash_bottle_of_sulfuric_acid"
+  }
+}

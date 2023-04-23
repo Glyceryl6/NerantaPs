@@ -1,11 +1,11 @@
 package com.nerantaps.blocks;
 
+import com.nerantaps.blocks.entity.PaloloWormHoleEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -17,13 +17,23 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 @SuppressWarnings("deprecation")
-public class PaloloWormHole extends Block implements SimpleWaterloggedBlock {
+public class PaloloWormHole extends BaseEntityBlock implements SimpleWaterloggedBlock {
 
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     public PaloloWormHole() {
         super(Properties.of(Material.SAND).sound(SoundType.SAND).strength(1.0f).noCollission());
         this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, false));
+    }
+
+    @Override
+    public RenderShape getRenderShape(BlockState state) {
+        return RenderShape.MODEL;
+    }
+
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new PaloloWormHoleEntity(pos, state);
     }
 
     @Override

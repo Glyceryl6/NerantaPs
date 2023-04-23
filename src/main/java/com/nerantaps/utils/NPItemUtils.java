@@ -26,7 +26,7 @@ public class NPItemUtils {
         return NPItems.ITEMS.register(name + "_spawn_egg", () -> new ForgeSpawnEggItem(type, backgroundColor, highlightColor, defaultBuilder()));
     }
 
-    private static Item.Properties defaultBuilder() {
+    public static Item.Properties defaultBuilder() {
         return new Item.Properties().tab(NPTabs.TAB_NERANTA_TAB_1);
     }
 

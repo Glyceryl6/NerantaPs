@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "all": "neranta_ps:block/cut_rustiness_iron_plate_block",
+    "bottom": "neranta_ps:block/cut_rustiness_iron_plate_block",
+    "side": "neranta_ps:block/cut_rustiness_iron_plate_block",
+    "top": "neranta_ps:block/cut_rustiness_iron_plate_block"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "neranta_ps:block/oceanicend_stone_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "neranta_ps:block/oceanicend_stone"
+    },
+    "axis=z": {
+      "model": "neranta_ps:block/oceanicend_stone_horizontal",
+      "x": 90
+    }
+  }
+}

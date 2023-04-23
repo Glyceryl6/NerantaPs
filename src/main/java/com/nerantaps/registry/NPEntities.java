@@ -4,6 +4,9 @@ import com.nerantaps.NerantaPs;
 import com.nerantaps.client.renderer.*;
 import com.nerantaps.entity.animal.*;
 import com.nerantaps.entity.monster.PaloloWorm;
+import com.nerantaps.entity.projectile.ThrownSplashBottleOfAlcohol;
+import com.nerantaps.entity.projectile.ThrownSplashBottleOfSulfuricAcid;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -21,19 +24,29 @@ import net.minecraftforge.registries.RegistryObject;
 public class NPEntities {
 
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, NerantaPs.MOD_ID);
-    public static final RegistryObject<EntityType<PaloloWorm>> PALOLO_WORM = register("palolo_worm", PaloloWorm::new, MobCategory.MONSTER, 2.0F, 2.0F);
-    public static final RegistryObject<EntityType<IronSnail>> IRON_SNAIL = register("iron_snail", IronSnail::new, MobCategory.CREATURE, 0.625F, 1.5F);
-    public static final RegistryObject<EntityType<Dicynodon>> DICYNODON = register("dicynodon", Dicynodon::new, MobCategory.CREATURE, 1.5F, 0.9F);
-    public static final RegistryObject<EntityType<TubeWorm>> TUBE_WORM = register("tube_worm", TubeWorm::new, MobCategory.CREATURE, 0.5F, 1.8F);
-    public static final RegistryObject<EntityType<Nautilus>> NAUTILUS = register("nautilus", Nautilus::new, MobCategory.CREATURE, 1.0F, 0.75F);
+    public static final RegistryObject<EntityType<PaloloWorm>> PALOLO_WORM = registerCreature("palolo_worm", PaloloWorm::new, MobCategory.MONSTER, 2.0F, 2.0F);
+    public static final RegistryObject<EntityType<IronSnail>> IRON_SNAIL = registerCreature("iron_snail", IronSnail::new, MobCategory.CREATURE, 0.625F, 1.5F);
+    public static final RegistryObject<EntityType<Dicynodon>> DICYNODON = registerCreature("dicynodon", Dicynodon::new, MobCategory.CREATURE, 1.5F, 0.9F);
+    public static final RegistryObject<EntityType<TubeWorm>> TUBE_WORM = registerCreature("tube_worm", TubeWorm::new, MobCategory.CREATURE, 0.5F, 1.8F);
+    public static final RegistryObject<EntityType<Nautilus>> NAUTILUS = registerCreature("nautilus", Nautilus::new, MobCategory.CREATURE, 1.0F, 0.75F);
+    public static final RegistryObject<EntityType<ThrownSplashBottleOfSulfuricAcid>> THROWN_SPLASH_BOTTLE_OF_SULFURIC_ACID =
+            register("thrown_splash_bottle_of_sulfuric_acid", ThrownSplashBottleOfSulfuricAcid::new, MobCategory.MISC, 0.25F, 0.25F);
+    public static final RegistryObject<EntityType<ThrownSplashBottleOfAlcohol>> THROWN_SPLASH_BOTTLE_OF_ALCOHOL =
+            register("thrown_splash_bottle_of_alcohol", ThrownSplashBottleOfAlcohol::new, MobCategory.MISC, 0.25F, 0.25F);
+
+    private static <T extends Entity> RegistryObject<EntityType<T>> registerCreature(String name, EntityType.EntityFactory<T> factory, MobCategory category, float width, float height) {
+        return ENTITY_TYPES.register(name, () -> EntityType.Builder.of(factory, category).sized(width, height).build(name));
+    }
 
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.EntityFactory<T> factory, MobCategory category, float width, float height) {
-        return ENTITY_TYPES.register(name, () -> EntityType.Builder.of(factory, category).sized(width, height).build(name));
+        return ENTITY_TYPES.register(name, () -> EntityType.Builder.of(factory, category).sized(width, height).updateInterval(10).build(name));
     }
 
     @OnlyIn(Dist.CLIENT)
     @SubscribeEvent
     public static void registerRenderer(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(THROWN_SPLASH_BOTTLE_OF_SULFURIC_ACID.get(), ThrownItemRenderer::new);
+        event.registerEntityRenderer(THROWN_SPLASH_BOTTLE_OF_ALCOHOL.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(PALOLO_WORM.get(), PaloloWormRenderer::new);
         event.registerEntityRenderer(IRON_SNAIL.get(), IronSnailRenderer::new);
         event.registerEntityRenderer(DICYNODON.get(), DicynodonRenderer::new);

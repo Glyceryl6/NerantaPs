@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "state=plain,axis=y": { "model": "neranta_ps:block/maple_log" },
+    "state=plain,axis=x": { "model": "neranta_ps:block/maple_log", "x": 90, "y": 90 },
+    "state=plain,axis=z": { "model": "neranta_ps:block/maple_log", "x": 90 },
+    "state=dry_north": { "model": "neranta_ps:block/maple_log_dry" },
+    "state=dry_south": { "model": "neranta_ps:block/maple_log_dry", "y": 180 },
+    "state=dry_west": { "model": "neranta_ps:block/maple_log_dry", "y": 270 },
+    "state=dry_east": { "model": "neranta_ps:block/maple_log_dry", "y": 90 },
+    "state=wet_north": { "model": "neranta_ps:block/maple_log_wet" },
+    "state=wet_south": { "model": "neranta_ps:block/maple_log_wet", "y": 180 },
+    "state=wet_west": { "model": "neranta_ps:block/maple_log_wet", "y": 270 },
+    "state=wet_east": { "model": "neranta_ps:block/maple_log_wet", "y": 90 }
+  }
+}

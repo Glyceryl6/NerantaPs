@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "neranta_ps:deep_netherrack"
+    },
+    "X": {
+      "item": "minecraft:stone_sword"
+    }
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "item": "neranta_ps:key_of_deep_nether"
+  }
+}

@@ -31,7 +31,10 @@ public class NPBlockLoot extends BlockLoot {
     protected void addTables() {
         this.dropSelf(NPBlocks.IRON_SAND.get());
         this.dropSelf(NPBlocks.IRON_SANDSTONE.get());
+        this.dropSelf(NPBlocks.DEEP_NETHERRACK.get());
         this.dropSelf(NPBlocks.ABYSMAL_SEA_ROCK.get());
+        this.dropSelf(NPBlocks.RAW_CHROMITE_BLOCK.get());
+        this.dropSelf(NPBlocks.CHROMITE_BLOCK.get());
         this.dropSelf(NPBlocks.SULFUR_BLOCK.get());
         this.dropSelf(NPBlocks.GLOW_LOG.get());
         this.dropSelf(NPBlocks.GLOW_WOOD.get());
@@ -57,12 +60,37 @@ public class NPBlockLoot extends BlockLoot {
         this.dropSelf(NPBlocks.CYCAS_TRAPDOOR.get());
         this.dropSelf(NPBlocks.CYCAS_FENCE_GATE.get());
         this.dropSelf(NPBlocks.CYCAS_PRESSURE_PLATE.get());
+        this.dropSelf(NPBlocks.MAPLE_LOG.get());
+        this.dropSelf(NPBlocks.MAPLE_WOOD.get());
+        this.dropSelf(NPBlocks.MAPLE_PLANKS.get());
+        this.dropSelf(NPBlocks.MAPLE_SAPLING.get());
+        this.dropSelf(NPBlocks.MAPLE_SLAB.get());
+        this.dropSelf(NPBlocks.MAPLE_DOOR.get());
+        this.dropSelf(NPBlocks.MAPLE_FENCE.get());
+        this.dropSelf(NPBlocks.MAPLE_STAIRS.get());
+        this.dropSelf(NPBlocks.MAPLE_BUTTON.get());
+        this.dropSelf(NPBlocks.MAPLE_TRAPDOOR.get());
+        this.dropSelf(NPBlocks.MAPLE_FENCE_GATE.get());
+        this.dropSelf(NPBlocks.MAPLE_PRESSURE_PLATE.get());
+        this.dropSelf(NPBlocks.COBBLED_OCEANICEND_STONE.get());
         this.dropSelf(NPBlocks.RED_HOT_IRON_SAND.get());
         this.dropSelf(NPBlocks.STRIPPED_GLOW_LOG.get());
         this.dropSelf(NPBlocks.STRIPPED_GLOW_WOOD.get());
         this.dropSelf(NPBlocks.STRIPPED_CYCAS_LOG.get());
         this.dropSelf(NPBlocks.STRIPPED_CYCAS_WOOD.get());
         this.dropSelf(NPBlocks.ROTTEN_FLESH_BLOCK.get());
+        this.dropSelf(NPBlocks.IRON_PLATE_BLOCK.get());
+        this.dropSelf(NPBlocks.CUT_IRON_PLATE_BLOCK.get());
+        this.dropSelf(NPBlocks.RUSTINESS_IRON_PLATE_BLOCK.get());
+        this.dropSelf(NPBlocks.CUT_RUSTINESS_IRON_PLATE_BLOCK.get());
+        this.dropSelf(NPBlocks.IRON_PLATE_SLAB.get());
+        this.dropSelf(NPBlocks.CUT_IRON_PLATE_SLAB.get());
+        this.dropSelf(NPBlocks.RUSTINESS_IRON_PLATE_SLAB.get());
+        this.dropSelf(NPBlocks.CUT_RUSTINESS_IRON_PLATE_SLAB.get());
+        this.dropSelf(NPBlocks.IRON_PLATE_STAIRS.get());
+        this.dropSelf(NPBlocks.CUT_IRON_PLATE_STAIRS.get());
+        this.dropSelf(NPBlocks.RUSTINESS_IRON_PLATE_STAIRS.get());
+        this.dropSelf(NPBlocks.CUT_RUSTINESS_IRON_PLATE_STAIRS.get());
         this.dropWhenSilkTouch(NPBlocks.BLACK_SMOKER.get());
         this.dropWhenSilkTouch(NPBlocks.COMBUSTIBLE_ICE.get());
         this.dropWhenSilkTouch(NPBlocks.MAGNETIC_STORM_VENT.get());
@@ -70,14 +98,23 @@ public class NPBlockLoot extends BlockLoot {
         this.dropPottedContents(NPBlocks.POTTED_GLOSSOPTERIS.get());
         this.dropPottedContents(NPBlocks.POTTED_GLOW_SAPLING.get());
         this.dropPottedContents(NPBlocks.POTTED_CYCAS_SAPLING.get());
+        this.dropPottedContents(NPBlocks.POTTED_MAPLE_SAPLING.get());
         this.dropPottedContents(NPBlocks.POTTED_UNDERWATER_FUNGUS.get());
+        this.add(NPBlocks.DEEP_NETHER_CHROMITE_ORE.get(), block ->
+                createOreDrop(block, NPItems.RAW_CHROMITE_ORE.get()));
         this.add(NPBlocks.UNDERWATER_FUNGUS_BLOCK.get(), block ->
                 createSingleItemTableWithSilkTouch(block, Blocks.DIRT));
+        this.add(NPBlocks.BLOODY_BLACKSTONE.get(), block ->
+                createSingleItemTableWithSilkTouch(block, Blocks.BLACKSTONE));
+        this.add(NPBlocks.OCEANICEND_STONE.get(), block ->
+                createSingleItemTableWithSilkTouch(block, NPBlocks.COBBLED_OCEANICEND_STONE.get()));
         this.add(NPBlocks.GLOW_GRASS.get(), BlockLoot::createGrassDrops);
         this.add(NPBlocks.GLOW_LEAVES.get(), block -> createLeavesDrops(block,
                 NPBlocks.GLOW_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         this.add(NPBlocks.CYCAS_LEAVES.get(), block -> createLeavesDrops(block,
                 NPBlocks.CYCAS_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        this.add(NPBlocks.MAPLE_LEAVES.get(), block -> createLeavesDrops(block,
+                NPBlocks.MAPLE_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
         this.add(NPBlocks.ELDEN_FERN.get(), BlockLoot::createShearsOnlyDrop);
         this.add(NPBlocks.GLOSSOPTERIS.get(), BlockLoot::createShearsOnlyDrop);
         this.add(NPBlocks.UNDERWATER_FUNGUS.get(), BlockLoot::createShearsOnlyDrop);

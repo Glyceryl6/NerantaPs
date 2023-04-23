@@ -9,7 +9,7 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = NerantaPs.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = NerantaPs.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class NPModelLayers {
 
     public static final ModelLayerLocation PALOLO_WORM = register("palolo_worm");
@@ -22,7 +22,6 @@ public class NPModelLayers {
         return new ModelLayerLocation(NerantaPs.prefix(path), "main");
     }
 
-    @OnlyIn(Dist.CLIENT)
     @SubscribeEvent
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(PALOLO_WORM, PaloloWormModel::createBodyLayer);

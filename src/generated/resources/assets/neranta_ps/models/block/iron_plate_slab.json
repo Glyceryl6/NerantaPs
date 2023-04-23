@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "neranta_ps:block/iron_plate_block",
+    "side": "neranta_ps:block/iron_plate_block",
+    "top": "neranta_ps:block/iron_plate_block"
+  }
+}

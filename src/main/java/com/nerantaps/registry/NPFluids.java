@@ -1,8 +1,7 @@
 package com.nerantaps.registry;
 
 import com.nerantaps.NerantaPs;
-import com.nerantaps.blocks.fluids.NascentLavaFluid;
-import com.nerantaps.blocks.fluids.NascentLavaFluidType;
+import com.nerantaps.blocks.fluids.*;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Blocks;
@@ -26,11 +25,17 @@ import net.minecraftforge.registries.RegistryObject;
 public class NPFluids {
 
     public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, NerantaPs.MOD_ID);
+    public static final RegistryObject<FlowingFluid> ALCOHOL = FLUIDS.register("alcohol", AlcoholFluid.Source::new);
+    public static final RegistryObject<FlowingFluid> FLOWING_ALCOHOL = FLUIDS.register("flowing_alcohol", AlcoholFluid.Flowing::new);
     public static final RegistryObject<FlowingFluid> NASCENT_LAVA = FLUIDS.register("nascent_lava", NascentLavaFluid.Source::new);
     public static final RegistryObject<FlowingFluid> FLOWING_NASCENT_LAVA = FLUIDS.register("flowing_nascent_lava", NascentLavaFluid.Flowing::new);
+    public static final RegistryObject<FlowingFluid> SULFURIC_ACID = FLUIDS.register("sulfuric_acid", SulfuricAcidFluid.Source::new);
+    public static final RegistryObject<FlowingFluid> FLOWING_SULFURIC_ACID = FLUIDS.register("flowing_sulfuric_acid", SulfuricAcidFluid.Flowing::new);
 
     public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, NerantaPs.MOD_ID);
+    public static final RegistryObject<FluidType> ALCOHOL_TYPE = FLUID_TYPES.register("alcohol_type", AlcoholFluidType::new);
     public static final RegistryObject<FluidType> NASCENT_LAVA_TYPE = FLUID_TYPES.register("nascent_lava", NascentLavaFluidType::new);
+    public static final RegistryObject<FluidType> SULFURIC_ACID_TYPE = FLUID_TYPES.register("sulfuric_acid", SulfuricAcidFluidType::new);
 
     @SubscribeEvent
     public static void registerInteraction(FMLCommonSetupEvent event) {
@@ -44,8 +49,12 @@ public class NPFluids {
     @OnlyIn(Dist.CLIENT)
     @SubscribeEvent
     public static void registerRenderLayer(FMLClientSetupEvent event) {
+        ItemBlockRenderTypes.setRenderLayer(ALCOHOL.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FLOWING_ALCOHOL.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(NASCENT_LAVA.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(FLOWING_NASCENT_LAVA.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(SULFURIC_ACID.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(FLOWING_SULFURIC_ACID.get(), RenderType.translucent());
     }
 
 }

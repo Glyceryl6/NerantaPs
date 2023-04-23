@@ -1,6 +1,9 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/slab",
   "textures": {
-    "all": "neranta_ps:block/glow_planks"
+    "all": "neranta_ps:block/glow_planks",
+    "bottom": "neranta_ps:block/glow_planks",
+    "side": "neranta_ps:block/glow_planks",
+    "top": "neranta_ps:block/glow_planks"
   }
 }

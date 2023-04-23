@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "neranta_ps:block/cut_iron_plate_slab"
+    },
+    "type=double": {
+      "model": "neranta_ps:block/cut_iron_plate_block"
+    },
+    "type=top": {
+      "model": "neranta_ps:block/cut_iron_plate_slab_top"
+    }
+  }
+}

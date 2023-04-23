@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "neranta_ps:sulfuric_acid_bucket"
+    },
+    {
+      "tag": "minecraft:logs"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "minecraft:charcoal"
+  }
+}

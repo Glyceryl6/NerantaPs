@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "neranta_ps:block/chromite_block"
+    }
+  }
+}
