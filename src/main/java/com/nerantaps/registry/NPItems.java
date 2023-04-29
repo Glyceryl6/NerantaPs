@@ -42,7 +42,7 @@ public class NPItems {
     public static final RegistryObject<Item> BOTTLE_OF_ALCOHOL = ITEMS.register("bottle_of_alcohol", BottleOfAlcohol::new);
     public static final RegistryObject<Item> SPLASH_BOTTLE_OF_ALCOHOL = ITEMS.register("splash_bottle_of_alcohol", SplashBottleOfAlcohol::new);
     public static final RegistryObject<Item> BOTTLE_OF_SULFURIC_ACID = ITEMS.register("bottle_of_sulfuric_acid",
-            () -> new Item((defaultBuilder()).craftRemainder(Items.GLASS_BOTTLE)));
+            () -> new Item(defaultBuilder().craftRemainder(Items.GLASS_BOTTLE)));
     public static final RegistryObject<Item> SPLASH_BOTTLE_OF_SULFURIC_ACID = ITEMS.register("splash_bottle_of_sulfuric_acid", SplashBottleOfSulfuricAcid::new);
     public static final RegistryObject<Item> SANGUINARY_POTION = ITEMS.register("sanguinary_potion", () -> new SplashPotionItem(defaultBuilder()) {
         @Override
@@ -120,8 +120,11 @@ public class NPItems {
     //Spawn Eggs
     public static final RegistryObject<Item> PALOLO_WORM_SPAWN_EGG = spawnEgg("palolo_worm", NPEntities.PALOLO_WORM, -1452680, -8568564);
     public static final RegistryObject<Item> IRON_SNAIL_SPAWN_EGG = spawnEgg("iron_snail", NPEntities.IRON_SNAIL, -12562576, -12483893);
+    public static final RegistryObject<Item> WING_SNAKE_SPAWN_EGG = spawnEgg("wing_snake", NPEntities.WING_SNAKE, 0x350c06, 0xec4937);
     public static final RegistryObject<Item> DICYNODON_SPAWN_EGG = spawnEgg("dicynodon", NPEntities.DICYNODON, -5473466, -861246);
+    public static final RegistryObject<Item> RUST_SLUG_SPAWN_EGG = spawnEgg("rust_slug", NPEntities.RUST_SLUG, 0x745152, 0x766a6a);
     public static final RegistryObject<Item> TUBE_WORM_SPAWN_EGG = spawnEgg("tube_worm", NPEntities.TUBE_WORM, -396303, -2058882);
     public static final RegistryObject<Item> NAUTILUS_SPAWN_EGG = spawnEgg("nautilus", NPEntities.NAUTILUS, -1931413, -274495);
+    public static final RegistryObject<Item> HELL_BEE_SPAWN_EGG = spawnEgg("hell_bee", NPEntities.HELL_BEE, 0x7a89b6, 0x727272);
 
 }

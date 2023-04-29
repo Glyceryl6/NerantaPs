@@ -157,6 +157,7 @@ public class NPRecipeProvider extends RecipeProvider {
         nineBlockStorageRecipes(finishedRecipeConsumer, NPItems.CHROMITE_INGOT.get(), NPBlocks.CHROMITE_BLOCK.get());
         nineBlockStorageRecipes(finishedRecipeConsumer, NPItems.SULFUR_POWDER.get(), NPBlocks.SULFUR_BLOCK.get());
         nineBlockStorageRecipes(finishedRecipeConsumer, NPItems.RUST.get(), NPBlocks.RUST_BLOCK.get());
+        nineBlockStorageRecipes(finishedRecipeConsumer, NPItems.ASH.get(), NPBlocks.ASH_BLOCK.get());
         stonecutterResultFromBase(finishedRecipeConsumer, NPBlocks.IRON_PLATE_BLOCK.get(), Blocks.IRON_BLOCK, 9);
         stonecutterResultFromBase(finishedRecipeConsumer, NPBlocks.IRON_PLATE_STAIRS.get(), NPBlocks.IRON_PLATE_BLOCK.get(), 4);
         stonecutterResultFromBase(finishedRecipeConsumer, NPBlocks.IRON_PLATE_SLAB.get(), NPBlocks.IRON_PLATE_BLOCK.get(), 8);

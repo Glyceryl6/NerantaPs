@@ -28,6 +28,7 @@ public class NPBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        this.simpleBlock(NPBlocks.ASH_BLOCK.get());
         this.simpleBlock(NPBlocks.IRON_SAND.get());
 //        this.simpleBlock(NPBlocks.RUST_PILE.get());
         this.simpleBlock(NPBlocks.RUST_BLOCK.get());
@@ -61,12 +62,14 @@ public class NPBlockStateProvider extends BlockStateProvider {
         this.pottedPlants(NPBlocks.POTTED_CYCAS_SAPLING.get());
         this.pottedPlants(NPBlocks.POTTED_MAPLE_SAPLING.get());
         this.pottedPlants(NPBlocks.POTTED_UNDERWATER_FUNGUS.get());
+        this.logBlock((RotatedPillarBlock) NPBlocks.ASHES_LOG.get());
         this.logBlock((RotatedPillarBlock) NPBlocks.GLOW_LOG.get());
         this.logBlock((RotatedPillarBlock) NPBlocks.CYCAS_LOG.get());
 //        this.logBlock((RotatedPillarBlock) NPBlocks.MAPLE_LOG.get());
         this.logBlock((RotatedPillarBlock) NPBlocks.STRIPPED_GLOW_LOG.get());
         this.logBlock((RotatedPillarBlock) NPBlocks.STRIPPED_CYCAS_LOG.get());
         this.logBlock((RotatedPillarBlock) NPBlocks.STRIPPED_MAPLE_LOG.get());
+        this.simpleBlockWithRenderType(NPBlocks.ASHES_LEAVES.get(), CUTOUT_MIPPED);
         this.simpleBlockWithRenderType(NPBlocks.GLOW_LEAVES.get(), CUTOUT_MIPPED);
         this.simpleBlockWithRenderType(NPBlocks.CYCAS_LEAVES.get(), CUTOUT_MIPPED);
         this.simpleBlockWithRenderType(NPBlocks.MAPLE_LEAVES.get(), CUTOUT_MIPPED);
@@ -93,6 +96,9 @@ public class NPBlockStateProvider extends BlockStateProvider {
         this.axisBlock((RotatedPillarBlock) NPBlocks.STRIPPED_MAPLE_WOOD.get(),
                 NerantaPs.prefix("block/stripped_maple_log"), NerantaPs.prefix("block/stripped_maple_log"));
         this.axisBlock((RotatedPillarBlock) NPBlocks.OCEANICEND_STONE.get(), NerantaPs.prefix("block/oceanicend_stone"));
+        this.simpleBlockItem(NPBlocks.ASHES_WOOD.get(), this.models().cubeColumn("ashes_wood",
+                NerantaPs.prefix("block/ashes_log"), NerantaPs.prefix("block/ashes_log")));
+        this.simpleBlockItem(NPBlocks.ASHES_LEAVES.get(), this.cubeAll(NPBlocks.ASHES_LEAVES.get()));
         this.simpleBlockItem(NPBlocks.GLOW_WOOD.get(), this.models().cubeColumn("glow_wood",
                 NerantaPs.prefix("block/glow_log"), NerantaPs.prefix("block/glow_log")));
         this.simpleBlockItem(NPBlocks.GLOW_LEAVES.get(), this.cubeAll(NPBlocks.GLOW_LEAVES.get()));
@@ -105,6 +111,7 @@ public class NPBlockStateProvider extends BlockStateProvider {
                 NerantaPs.prefix("block/maple_log"), NerantaPs.prefix("block/maple_log")));
         this.simpleBlockItem(NPBlocks.MAPLE_LEAVES.get(), this.cubeAll(NPBlocks.MAPLE_LEAVES.get()));
         this.simpleBlockItem(NPBlocks.MAPLE_PLANKS.get(), this.cubeAll(NPBlocks.MAPLE_PLANKS.get()));
+        this.simpleBlockItem(NPBlocks.ASH_BLOCK.get(), this.cubeAll(NPBlocks.ASH_BLOCK.get()));
         this.simpleBlockItem(NPBlocks.IRON_SAND.get(), this.cubeAll(NPBlocks.IRON_SAND.get()));
         this.simpleBlockItem(NPBlocks.KIMBERLITE.get(), this.cubeAll(NPBlocks.KIMBERLITE.get()));
         this.simpleBlockItem(NPBlocks.SULFUR_ORE.get(), this.cubeAll(NPBlocks.SULFUR_ORE.get()));
@@ -189,6 +196,8 @@ public class NPBlockStateProvider extends BlockStateProvider {
         this.simpleBlockItem(NPBlocks.CUT_IRON_PLATE_SLAB.get(), this.normalSlab(NPBlocks.CUT_IRON_PLATE_BLOCK.get()));
         this.simpleBlockItem(NPBlocks.RUSTINESS_IRON_PLATE_SLAB.get(), this.normalSlab(NPBlocks.RUSTINESS_IRON_PLATE_BLOCK.get()));
         this.simpleBlockItem(NPBlocks.CUT_RUSTINESS_IRON_PLATE_SLAB.get(), this.normalSlab(NPBlocks.CUT_RUSTINESS_IRON_PLATE_BLOCK.get()));
+        this.simpleBlockItem(NPBlocks.ASHES_LOG.get(), this.models().cubeColumn("ashes_log",
+                NerantaPs.prefix("block/ashes_log"), NerantaPs.prefix("block/ashes_log_top")));
         this.simpleBlockItem(NPBlocks.GLOW_LOG.get(), this.models().cubeColumn("glow_log",
                 NerantaPs.prefix("block/glow_log"), NerantaPs.prefix("block/glow_log_top")));
         this.simpleBlockItem(NPBlocks.CYCAS_LOG.get(), this.models().cubeColumn("cycas_log",

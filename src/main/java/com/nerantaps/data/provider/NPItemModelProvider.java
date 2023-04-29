@@ -41,17 +41,7 @@ public class NPItemModelProvider extends ItemModelProvider {
         this.basicItem(NPItems.CHROMITE_CHESTPLATE.get());
         this.basicItem(NPItems.CHROMITE_LEGGINGS.get());
         this.basicItem(NPItems.CHROMITE_BOOTS.get());
-        this.basicItem(NPItems.CHROMITE_SWORD.get());
-        this.basicItem(NPItems.CHROMITE_SHOVEL.get());
-        this.basicItem(NPItems.CHROMITE_PICKAXE.get());
-        this.basicItem(NPItems.CHROMITE_AXE.get());
-        this.basicItem(NPItems.CHROMITE_HOE.get());
         this.basicItem(NPItems.ETERNAL_STEEL.get());
-        this.basicItem(NPItems.ETERNAL_STEEL_SWORD.get());
-        this.basicItem(NPItems.ETERNAL_STEEL_SHOVEL.get());
-        this.basicItem(NPItems.ETERNAL_STEEL_PICKAXE.get());
-        this.basicItem(NPItems.ETERNAL_STEEL_AXE.get());
-        this.basicItem(NPItems.ETERNAL_STEEL_HOE.get());
         this.basicItem(NPItems.DRAGON_MARROW_HELMET.get());
         this.basicItem(NPItems.DRAGON_MARROW_CHESTPLATE.get());
         this.basicItem(NPItems.DRAGON_MARROW_LEGGINGS.get());
@@ -81,9 +71,12 @@ public class NPItemModelProvider extends ItemModelProvider {
         this.basicItem(NPBlocks.CYCAS_DOOR.get().asItem());
         this.spawnEggItem(NPItems.PALOLO_WORM_SPAWN_EGG.get());
         this.spawnEggItem(NPItems.IRON_SNAIL_SPAWN_EGG.get());
+        this.spawnEggItem(NPItems.WING_SNAKE_SPAWN_EGG.get());
         this.spawnEggItem(NPItems.DICYNODON_SPAWN_EGG.get());
+        this.spawnEggItem(NPItems.RUST_SLUG_SPAWN_EGG.get());
         this.spawnEggItem(NPItems.TUBE_WORM_SPAWN_EGG.get());
         this.spawnEggItem(NPItems.NAUTILUS_SPAWN_EGG.get());
+        this.spawnEggItem(NPItems.HELL_BEE_SPAWN_EGG.get());
         this.blockItem(NPBlocks.UNDERWATER_FUNGUS.getId());
         this.blockItem(NPBlocks.CYCAS_SAPLING.getId());
         this.blockItem(NPBlocks.MAPLE_SAPLING.getId());
@@ -93,7 +86,16 @@ public class NPItemModelProvider extends ItemModelProvider {
         this.blockItem(NPBlocks.GLOW_MOSS.getId());
         this.blockItem(NPBlocks.GLOW_GRASS.getId());
         this.blockItem(NPBlocks.GLOW_SAPLING.getId());
-        //this.handheldItem(NPItems.PURPLE_SWORD.get());
+        this.handheldItem(NPItems.CHROMITE_SWORD.get());
+        this.handheldItem(NPItems.CHROMITE_SHOVEL.get());
+        this.handheldItem(NPItems.CHROMITE_PICKAXE.get());
+        this.handheldItem(NPItems.CHROMITE_AXE.get());
+        this.handheldItem(NPItems.CHROMITE_HOE.get());
+        this.handheldItem(NPItems.ETERNAL_STEEL_SWORD.get());
+        this.handheldItem(NPItems.ETERNAL_STEEL_SHOVEL.get());
+        this.handheldItem(NPItems.ETERNAL_STEEL_PICKAXE.get());
+        this.handheldItem(NPItems.ETERNAL_STEEL_AXE.get());
+        this.handheldItem(NPItems.ETERNAL_STEEL_HOE.get());
     }
 
     private void spawnEggItem(Item item) {

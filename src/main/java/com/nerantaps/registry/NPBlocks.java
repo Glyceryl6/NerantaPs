@@ -54,7 +54,7 @@ public class NPBlocks {
     public static final RegistryObject<Block> GLOW_MOSS = register("glow_moss", () -> new TallGrassBlock(copy(Blocks.BROWN_MUSHROOM).lightLevel(s -> 3)));
     public static final RegistryObject<Block> ABYSMAL_SEA_ROCK = normal("abysmal_sea_rock", defaultProperties().strength(2.5F, 6.0F));
     public static final RegistryObject<Block> RAW_CHROMITE_BLOCK = normal("raw_chromite_block", defaultProperties().strength(5.0F, 6.0F));
-    public static final RegistryObject<Block> CHROMITE_BLOCK = normal("chromite_block", defaultProperties().strength(6.0F, 6.0F));
+    public static final RegistryObject<Block> CHROMITE_BLOCK = normal("chromite_block", defaultProperties().strength(6.0F));
     public static final RegistryObject<Block> SUCK_BLOOD_WART_BLOCK = register("suck_blood_wart_block", SuckBloodWartBlock::new);
     public static final RegistryObject<Block> MAGNETIC_STORM_VENT = register("magnetic_storm_vent", MagneticStormVent::new);
     public static final RegistryObject<Block> RED_HOT_IRON_SAND = register("red_hot_iron_sand", RedHotIronSand::new);
@@ -109,7 +109,8 @@ public class NPBlocks {
     public static final RegistryObject<Block> CYCAS_STAIRS = stair("cycas_stairs", CYCAS_PLANKS, cycasProperties());
     public static final RegistryObject<Block> CYCAS_BUTTON = button("cycas_button", true, cycasProperties());
     public static final RegistryObject<Block> CYCAS_PRESSURE_PLATE = pressurePlate("cycas_pressure_plate", cycasProperties());
-    public static final RegistryObject<Block> CYCAS_SAPLING = register("cycas_sapling", () -> new SaplingBlock(new CycasGrower(), copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Block> CYCAS_SAPLING = register("cycas_sapling",
+            () -> new SaplingBlock(new CycasGrower(), copy(Blocks.OAK_SAPLING)));
     //Maple Trees
     public static final RegistryObject<Block> STRIPPED_MAPLE_LOG = register("stripped_maple_log", () -> Blocks.log(MaterialColor.WOOD, MaterialColor.PODZOL));
     public static final RegistryObject<Block> STRIPPED_MAPLE_WOOD = wood("stripped_maple_wood", MaterialColor.WOOD, 0);
@@ -126,6 +127,13 @@ public class NPBlocks {
     public static final RegistryObject<Block> MAPLE_BUTTON = button("maple_button", true, copy(Blocks.SPRUCE_BUTTON));
     public static final RegistryObject<Block> MAPLE_PRESSURE_PLATE = pressurePlate("maple_pressure_plate", copy(Blocks.SPRUCE_PRESSURE_PLATE));
     public static final RegistryObject<Block> MAPLE_SAPLING = register("maple_sapling", () -> new SaplingBlock(new MapleGrower(), copy(Blocks.OAK_SAPLING)));
+    //Ash Trees
+    public static final RegistryObject<Block> ASHES_LEAVES = register("ashes_leaves", () -> Blocks.leaves(SoundType.WOOL));
+    public static final RegistryObject<Block> ASHES_LOG = register("ashes_log", () -> Blocks.log(MaterialColor.COLOR_GRAY, MaterialColor.COLOR_BLACK));
+    public static final RegistryObject<Block> ASHES_WOOD = wood("ashes_wood", MaterialColor.COLOR_GRAY, 0);
+    public static final RegistryObject<Block> ASH_BLOCK = register("ash_block", () -> new FallingBlock(
+            BlockBehaviour.Properties.of(Material.STONE).strength(2.0F).requiresCorrectToolForDrops().sound(SoundType.WOOL)));
+    public static final RegistryObject<Block> ASH_PILE = register("ash_pile", AshPile::new);
     //Potted Plants
     public static final RegistryObject<Block> POTTED_GLOW_SAPLING = flowerPot("potted_glow_sapling", GLOW_SAPLING);
     public static final RegistryObject<Block> POTTED_CYCAS_SAPLING = flowerPot("potted_cycas_sapling", CYCAS_SAPLING);
